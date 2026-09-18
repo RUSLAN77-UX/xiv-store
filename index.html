@@ -47,6 +47,29 @@
             </div>
         </div>
     </div>
+    <script>
+        // Failsafe watchdog: auto-unlock page and hide preloader if scripts fail or stall
+        (function() {
+            var failsafe = setTimeout(function() {
+                var pl = document.getElementById('preloader');
+                if (pl && !pl.classList.contains('is-done')) {
+                    console.warn('Preloader safety watchdog: auto-unlocking');
+                    pl.classList.add('curtains-open');
+                    pl.style.pointerEvents = 'none';
+                    setTimeout(function() {
+                        pl.classList.add('is-done');
+                        pl.style.display = 'none';
+                        document.documentElement.classList.remove('preloader-locked');
+                        document.body.classList.remove('preloader-locked');
+                        document.body.style.overflow = '';
+                    }, 800);
+                }
+            }, 4500);
+            window.__clearPreloaderFailsafe = function() {
+                clearTimeout(failsafe);
+            };
+        })();
+    </script>
     <nav>
         <div class="container">
             <!-- Mobile Menu Toggle Button (visible on mobile/tablet) -->

@@ -21,7 +21,7 @@
  * - responsive: Настройки адаптивности под разную ширину экрана
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
 
     // =====================================================================
     // 1. ИНИЦИАЛИЗАЦИЯ КАРУСЕЛИ HERO СЕКЦИИ
@@ -1264,6 +1264,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const preloader = document.getElementById('preloader');
         const slots = document.querySelectorAll('.store-letter-slot');
         const fillElements = document.querySelectorAll('.letter-fill');
+        let isCompleted = false;
 
         // Управление блокировкой скролла во время анимации прелоадера
         const preventScrollEvent = (e) => {
@@ -1308,12 +1309,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!preloader || slots.length === 0) {
             enableScroll();
-            initHeadingObserver();
+            if (typeof initHeadingObserver === 'function') initHeadingObserver();
             return;
         }
 
         // Блокируем скролл на время выполнения анимации
         disableScroll();
+
+        // Защитный сторожевой таймер (failsafe watchdog) для гарантированной разблокировки
+        const failsafeTimer = setTimeout(() => {
+            if (!isCompleted) {
+                console.warn('Preloader safety watchdog triggered: auto-completing preloader');
+                onPreloaderComplete();
+            }
+        }, 3900);
 
         // Защита при возврате по истории назад/вперед (bfcache)
         window.addEventListener('pageshow', (event) => {
@@ -1326,6 +1335,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const duration = 2200; // 2.2 секунды равномерной закраски
 
         function animateProgress(timestamp) {
+            if (isCompleted) return;
             if (!startTime) startTime = timestamp;
             const elapsed = timestamp - startTime;
             const t = Math.min(elapsed / duration, 1);
@@ -1366,6 +1376,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 120);
 
         function onPreloaderComplete() {
+            if (isCompleted) return;
+            isCompleted = true;
+            clearTimeout(failsafeTimer);
+            if (typeof window.__clearPreloaderFailsafe === 'function') {
+                window.__clearPreloaderFailsafe();
+            }
+
             // Пауза перед разбегом букв
             setTimeout(() => {
                 // Шаг 1: Буквы разбегаются каждая в середину своей вертикальной полосы
@@ -1388,7 +1405,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     preloader.style.pointerEvents = 'none';
 
                     slots.forEach((slot, i) => {
-                        const deltaX = deltas[i];
+                        const deltaX = deltas[i] || 0;
                         const moveUp = (i % 2 === 0);
                         const translateY = moveUp ? '-101vh' : '101vh';
                         const delay = i * 0.06;
@@ -1406,7 +1423,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         enableScroll();
 
                         // Заголовки сайта анимируются строго после того, как прелоадер полностью открыл сайт
-                        initHeadingObserver();
+                        if (typeof initHeadingObserver === 'function') {
+                            initHeadingObserver();
+                        }
                     }, 1150);
                 }, 850);
             }, 200);
@@ -1541,7 +1560,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    initDzWaveGallery();
-    initXivFooter();
-    setupPreloader();
-});
+    try {
+        setupPreloader();
+    } catch (err) {
+        console.error('Error starting preloader:', err);
+    }
+    try {
+        initDzWaveGallery();
+    } catch (err) {
+        console.error('Error in initDzWaveGallery:', err);
+    }
+    try {
+        initXivFooter();
+    } catch (err) {
+        console.error('Error in initXivFooter:', err);
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+} else {
+    initApp();
+}

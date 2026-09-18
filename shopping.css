@@ -1,0 +1,1602 @@
+/* ==========================================================================
+   SHOPPING BAG PAGE STYLING — 1:1 REPRODUCTION OF SCREENSHOT 2 + RICH ANIMATIONS
+   ========================================================================== */
+
+:root {
+    --bg-color: #f3f3f3;
+    --text-primary: #111111;
+    --text-secondary: #777777;
+    --text-muted: #8e8e8e;
+    --border-light: #e2e2e2;
+    --border-divider: #d8d8d8;
+    --card-bg: #ffffff;
+    --btn-gray: #cecece;
+    --btn-hover: #1a1a1a;
+    --font-heading: 'Beatrice Deck', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --emerald-green: #10b981;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: radial-gradient(#e5e5e5 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   TOP NAVIGATION BAR (1:1 Screenshot 2)
+   ========================================================================== */
+.site-navbar {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 24px 48px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: fadeInDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+/* Hamburger Icon with hover animation (Hidden on desktop) */
+.nav-hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none; /* Hidden on desktop, shown only on mobile */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 14px;
+    padding: 0;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-hamburger:hover {
+    transform: scale(1.12);
+}
+
+.nav-hamburger:active {
+    transform: scale(0.92);
+}
+
+.nav-hamburger span {
+    display: block;
+    height: 1.8px;
+    background-color: var(--text-primary);
+    border-radius: 1px;
+    transition: width 0.25s ease, transform 0.25s ease;
+}
+
+.nav-hamburger span:nth-child(1) { width: 22px; }
+.nav-hamburger span:nth-child(2) { width: 18px; }
+.nav-hamburger span:nth-child(3) { width: 22px; }
+
+.nav-hamburger:hover span:nth-child(2) { width: 22px; }
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.25s ease, opacity 0.25s ease, transform 0.15s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.8px;
+    background-color: var(--text-primary);
+    border-radius: 1px;
+    transition: width 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover {
+    opacity: 1;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:active {
+    transform: scale(0.96);
+}
+
+/* Right Navigation Actions */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Black circular action buttons */
+.nav-circle-btn {
+    width: 38px;
+    height: 38px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, box-shadow 0.25s ease;
+    text-decoration: none;
+}
+
+.nav-circle-btn:hover {
+    background-color: #222222;
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+}
+
+.nav-circle-btn:active {
+    transform: scale(0.94);
+}
+
+.nav-circle-btn svg {
+    width: 17px;
+    height: 17px;
+    transition: transform 0.2s ease;
+}
+
+.nav-circle-btn#navFavBtn:hover svg {
+    animation: navHeartPulse 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Signature Cart Pill */
+.nav-cart-pill {
+    height: 38px;
+    background-color: #000000;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 4px 0 16px;
+    gap: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.nav-cart-pill:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
+}
+
+.nav-cart-pill:active {
+    transform: scale(0.96);
+}
+
+.cart-pill-label {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.cart-pill-circle {
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    transition: transform 0.2s ease;
+}
+
+.nav-cart-pill:hover .cart-pill-circle svg {
+    animation: navCartBounce 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes navHeartPulse {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.22); }
+    60% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+@keyframes navCartBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2.5px); }
+}
+
+.cart-pill-circle svg {
+    width: 15px;
+    height: 15px;
+}
+
+/* ==========================================================================
+   TABS HEADER (SHOPPING BAG / FAVOURITES)
+   ========================================================================== */
+.bag-header-section {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 16px 48px 0;
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.bag-tabs {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-bottom: 12px;
+}
+
+.bag-tab {
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    position: relative;
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+}
+
+.bag-tab:hover {
+    color: var(--text-primary);
+}
+
+.bag-tab.active {
+    color: var(--text-primary);
+}
+
+.bag-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-primary);
+    animation: tabUnderline 0.3s ease;
+}
+
+@keyframes tabUnderline {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.bag-tab svg {
+    width: 14px;
+    height: 14px;
+}
+
+.bag-divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-divider);
+    margin-bottom: 36px;
+}
+
+/* ==========================================================================
+   MAIN CONTENT LAYOUT (BAG GRID + ORDER SUMMARY)
+   ========================================================================== */
+.shopping-main-wrapper {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 48px 80px;
+}
+
+.shopping-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Left Grid of Items */
+.bag-grid-section {
+    width: 100%;
+}
+
+.bag-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+}
+
+/* Product Card with entrance & hover animations */
+.bag-item-card {
+    display: flex;
+    flex-direction: column;
+    animation: cardFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bag-item-card:nth-child(1) { animation-delay: 0.15s; }
+.bag-item-card:nth-child(2) { animation-delay: 0.25s; }
+
+.bag-item-card:hover {
+    transform: translateY(-4px);
+}
+
+.bag-item-card.is-removing {
+    animation: itemRemove 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes itemRemove {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.85) translateY(-10px);
+    }
+}
+
+.bag-card-top {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+/* Large Product Photo with subtle luxury zoom */
+.bag-card-media {
+    position: relative;
+    flex: 1;
+    aspect-ratio: 1 / 1;
+    background-color: #ededed;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.bag-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.bag-item-card:hover .bag-card-media img {
+    transform: scale(1.04);
+}
+
+/* Floating Heart Button with Pop Animation */
+.bag-photo-fav-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    background: #ffffff;
+    border: none;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+}
+
+.bag-photo-fav-btn:hover {
+    transform: scale(1.15);
+}
+
+.bag-photo-fav-btn:active {
+    transform: scale(0.9);
+}
+
+.bag-photo-fav-btn.is-active {
+    animation: heartPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.bag-photo-fav-btn.is-active svg {
+    fill: #e11d48;
+    stroke: #e11d48;
+}
+
+@keyframes heartPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
+
+.bag-photo-fav-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke: #444444;
+    fill: none;
+    transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+/* Card Controls on the right side of image */
+.bag-card-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding-top: 4px;
+}
+
+/* Close/Delete Button */
+.ctrl-remove-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 14px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 2px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ctrl-remove-btn:hover {
+    opacity: 1;
+    transform: scale(1.25) rotate(90deg);
+    color: #e11d48;
+}
+
+/* Size label */
+.ctrl-size-badge {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Color swatch with subtle glow */
+.ctrl-color-swatch {
+    width: 20px;
+    height: 20px;
+    background-color: #111111;
+    border: 1px solid #cccccc;
+    transition: transform 0.2s ease;
+}
+
+.ctrl-color-swatch:hover {
+    transform: scale(1.15);
+}
+
+/* Stepper (+ / count / -) with spring bounce */
+.ctrl-stepper {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d2d2d2;
+    border-radius: 2px;
+    background-color: #ffffff;
+    width: 22px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.step-btn {
+    background: none;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.step-btn:hover {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.step-btn:active {
+    transform: scale(0.85);
+}
+
+.step-value {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-primary);
+    padding: 2px 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    user-select: none;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease;
+}
+
+.step-value.is-bouncing {
+    animation: numBounce 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes numBounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.35); color: #2563eb; }
+    100% { transform: scale(1); }
+}
+
+/* Swap / Refresh Icon with smooth 360 spin */
+.ctrl-swap-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    transition: color 0.2s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ctrl-swap-btn:hover {
+    color: var(--text-primary);
+    transform: rotate(180deg);
+}
+
+.ctrl-swap-btn.is-spinning svg {
+    animation: spinOnce 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes spinOnce {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.ctrl-swap-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Bottom Card Details */
+.bag-card-meta {
+    margin-top: 14px;
+}
+
+.bag-item-category {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.bag-item-title-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.bag-item-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.bag-item-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN: ORDER SUMMARY BOX
+   ========================================================================== */
+.order-summary-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 2px;
+    padding: 28px 30px;
+    position: sticky;
+    top: 40px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    animation: fadeInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.summary-title {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+}
+
+.summary-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.summary-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--text-primary);
+}
+
+.summary-line.total-line {
+    font-size: 13px;
+    font-weight: 700;
+    padding-top: 8px;
+}
+
+.summary-divider {
+    height: 1px;
+    background-color: var(--border-light);
+    margin: 14px 0;
+}
+
+.tax-incl {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+    margin-left: 4px;
+}
+
+/* Terms and Conditions Checkbox */
+.summary-terms {
+    margin-bottom: 22px;
+}
+
+.terms-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s ease;
+}
+
+.terms-checkbox {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    accent-color: #111111;
+}
+
+/* CONTINUE BUTTON with Shimmer & Spring Ripple */
+.btn-continue {
+    width: 100%;
+    height: 46px;
+    background: linear-gradient(90deg, #cecece 0%, #e0e0e0 50%, #cecece 100%);
+    background-size: 200% 100%;
+    animation: shimmerBtn 3.5s infinite ease-in-out;
+    color: var(--text-primary);
+    border: none;
+    border-radius: 2px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+    text-decoration: none;
+}
+
+@keyframes shimmerBtn {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.btn-continue:hover {
+    background: #111111;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-continue:active {
+    transform: scale(0.97);
+}
+
+/* ==========================================================================
+   VISA CHECKOUT MODAL & 3D INTERACTIVE CARD
+   ========================================================================== */
+.checkout-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 100002;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+}
+
+.checkout-modal-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.checkout-modal-overlay.is-open .checkout-modal {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.checkout-modal {
+    position: relative;
+    width: 100%;
+    max-width: 470px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.35), 0 0 1px 1px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transform: scale(0.92) translateY(20px);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    will-change: transform, opacity;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 36px;
+    height: 36px;
+    background: #f4f4f5;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-close-btn:hover {
+    background-color: #e4e4e7;
+    transform: scale(1.1) rotate(90deg);
+}
+
+.modal-close-btn:active {
+    transform: scale(0.95);
+}
+
+/* Modal Views */
+.checkout-view {
+    padding: 32px 28px 32px;
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.checkout-view.is-hidden {
+    display: none;
+}
+
+.checkout-view.is-exiting {
+    opacity: 0;
+    transform: scale(0.95) translateY(-12px);
+    pointer-events: none;
+}
+
+/* Header */
+.modal-header-block {
+    margin-bottom: 20px;
+}
+
+.modal-security-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #0b802e;
+    background-color: #eaf8ee;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.modal-header-title {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #111111;
+    margin-bottom: 4px;
+}
+
+.modal-header-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Interactive 3D Credit Card Preview */
+.card-3d-wrap {
+    perspective: 1000px;
+    margin-bottom: 22px;
+}
+
+.credit-card-preview {
+    position: relative;
+    width: 100%;
+    height: 195px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #18181b 0%, #27272a 60%, #09090b 100%);
+    color: #ffffff;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    user-select: none;
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease-out, box-shadow 0.2s ease;
+}
+
+.credit-card-preview .card-glass-shine {
+    position: absolute;
+    top: -60%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 65%);
+    pointer-events: none;
+    transition: transform 0.15s ease-out;
+}
+
+.card-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.card-chip {
+    width: 38px;
+    height: 28px;
+    background: linear-gradient(135deg, #d4af37 0%, #f7df87 50%, #c49624 100%);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 3px 0;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.chip-line {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.card-brand-logo svg {
+    display: block;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+}
+
+.card-number-display {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    color: #fafafa;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+    transition: color 0.2s ease;
+}
+
+.card-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    z-index: 2;
+}
+
+.card-lbl {
+    display: block;
+    font-size: 8.5px;
+    letter-spacing: 0.8px;
+    color: #a1a1aa;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.card-val {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    color: #f4f4f5;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+/* Card Form Inputs */
+.checkout-form .form-group {
+    margin-bottom: 14px;
+}
+
+.checkout-form label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #27272a;
+    margin-bottom: 6px;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    padding-right: 48px;
+}
+
+.input-card-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+
+.checkout-form input[type="text"],
+.checkout-form input[type="password"] {
+    width: 100%;
+    height: 44px;
+    border: 1px solid #e4e4e7;
+    border-radius: 8px;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #09090b;
+    background-color: #fafafa;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.checkout-form input:focus {
+    border-color: #18181b;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(24, 24, 27, 0.08);
+}
+
+.checkout-form .form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.checkout-form .col-half {
+    flex: 1;
+}
+
+/* Pay Submit Button */
+.pay-submit-btn {
+    width: 100%;
+    height: 50px;
+    background-color: #18181b;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    margin-top: 18px;
+    transition: background-color 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+}
+
+.pay-submit-btn:hover {
+    background-color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.pay-submit-btn:active {
+    transform: scale(0.98);
+}
+
+.pay-btn-amount {
+    background-color: rgba(255, 255, 255, 0.18);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.pay-btn-lock {
+    opacity: 0.7;
+}
+
+/* ==========================================================================
+   SUCCESS & PROCESSING ANIMATION STAGE
+   ========================================================================== */
+.payment-animation-stage {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner-checkmark-container {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1);
+    transform-origin: center center;
+}
+
+.ring-bg-track {
+    stroke: #f1f1f4;
+}
+
+.ring-spinner-circle {
+    stroke: var(--emerald-green);
+    transform-origin: 50px 50px;
+    stroke-dasharray: 30, 264;
+    stroke-dashoffset: 0;
+    animation: ringRotate 1.35s linear infinite, ringChase 1.35s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.success-circle-bg {
+    opacity: 0;
+    transform: scale(0.5);
+    transform-origin: 50px 50px;
+    transition: opacity 0.25s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.success-checkmark-path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    opacity: 0;
+}
+
+/* COMPLETED SUCCESS STATE */
+.spinner-checkmark-container.is-completed {
+    animation: circleSoftBounce 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.spinner-checkmark-container.is-completed .ring-spinner-circle {
+    animation: none !important;
+    stroke-dasharray: 264, 264 !important;
+    stroke-dashoffset: 0 !important;
+    stroke: var(--emerald-green) !important;
+    transition: stroke-dasharray 0.35s ease, stroke-dashoffset 0.35s ease;
+}
+
+.spinner-checkmark-container.is-completed .success-circle-bg {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.spinner-checkmark-container.is-completed .success-checkmark-path {
+    animation: checkmarkDraw 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+@keyframes ringRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes ringChase {
+    0% {
+        stroke-dasharray: 15, 264;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 195, 264;
+        stroke-dashoffset: -45;
+    }
+    100% {
+        stroke-dasharray: 15, 264;
+        stroke-dashoffset: -264;
+    }
+}
+
+@keyframes circleSoftBounce {
+    0% { transform: scale(0.7); }
+    50% { transform: scale(1.15); }
+    75% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+@keyframes checkmarkDraw {
+    0% {
+        stroke-dashoffset: 60;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+
+/* Confetti Burst Container */
+.confetti-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    opacity: 0;
+    animation: confettiPop 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes confettiPop {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(0.4) rotate(var(--rot));
+    }
+}
+
+/* Status States Content */
+.payment-status-content {
+    text-align: center;
+}
+
+.status-state-processing h4 {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #18181b;
+    margin-bottom: 6px;
+}
+
+.status-state-processing p {
+    font-size: 13px;
+    color: #71717a;
+    margin-bottom: 16px;
+}
+
+.pulse-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.pulse-dots span {
+    width: 6px;
+    height: 6px;
+    background-color: var(--emerald-green);
+    border-radius: 50%;
+    animation: dotPulse 1.2s infinite ease-in-out both;
+}
+
+.pulse-dots span:nth-child(1) { animation-delay: -0.32s; }
+.pulse-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes dotPulse {
+    0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
+    40% { transform: scale(1); opacity: 1; }
+}
+
+.status-state-success.is-hidden {
+    display: none;
+}
+
+.status-state-success {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.success-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--emerald-green);
+    background-color: #ecfdf5;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.success-title {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    color: #111111;
+    margin-bottom: 6px;
+}
+
+.success-desc {
+    font-size: 13px;
+    color: #71717a;
+    max-width: 320px;
+    margin: 0 auto 20px;
+    line-height: 1.4;
+}
+
+/* Receipt Card */
+.order-receipt-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    padding: 5px 0;
+}
+
+.receipt-label {
+    color: #64748b;
+}
+
+.receipt-value {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.receipt-value.receipt-amount {
+    color: var(--emerald-green);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* Auto Redirect Bar */
+.redirect-countdown-wrap {
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.redirect-countdown-text {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.redirect-progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #e2e8f0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.redirect-progress-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #111111;
+    transition: width 3s linear;
+}
+
+.payment-done-btn {
+    width: 100%;
+    height: 46px;
+    background-color: #111111;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.payment-done-btn:hover {
+    background-color: #000000;
+    transform: translateY(-2px);
+}
+
+/* Screen Wipe / Curtain Transition to index.html */
+.screen-curtain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0d0d0d;
+    z-index: 999999;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(100%);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.screen-curtain.is-active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* General Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes cardFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+    .site-navbar {
+        padding: 20px 24px 14px;
+    }
+    .bag-header-section {
+        padding: 12px 24px 0;
+    }
+    .shopping-main-wrapper {
+        padding: 0 24px 60px;
+    }
+    .shopping-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .order-summary-box {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-hamburger {
+        display: flex !important;
+    }
+    .nav-links {
+        display: none !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .bag-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        display: none !important;
+    }
+    .credit-card-preview {
+        height: 175px;
+        padding: 18px 20px;
+    }
+    .card-number-display {
+        font-size: 15px;
+        letter-spacing: 1.5px;
+    }
+}
+
+/* Mobile Navigation Drawer */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 100002;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
+    pointer-events: none;
+}
+
+.mobile-nav-overlay:not(.is-open) {
+    display: none !important;
+}
+
+.mobile-nav-overlay.is-open {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.mobile-nav-drawer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+    max-width: 85vw;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 15px 0 50px rgba(0, 0, 0, 0.18);
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+}
+
+.mobile-nav-overlay.is-open .mobile-nav-drawer {
+    transform: translateX(0);
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 24px 18px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.mobile-nav-brand {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: #111111;
+    text-transform: uppercase;
+}
+
+.mobile-nav-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mobile-nav-close:hover {
+    transform: rotate(90deg);
+    opacity: 0.7;
+}
+
+.mobile-nav-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mobile-nav-link {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111111;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.mobile-nav-link:hover {
+    color: #555555;
+    transform: translateX(4px);
+}
+
+.mobile-nav-link.active {
+    color: #000000;
+    font-weight: 700;
+}

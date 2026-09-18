@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Checkout — XIV STORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='17.5' width='24.7487' height='24.7487' transform='rotate(45 17.5 0)' fill='%23D9D9D9'/%3E%3Cpath d='M34.6466 17.5002L17.75 34.3969V0.603527L34.6466 17.5002Z' fill='black' stroke='%23060606' stroke-width='0.5'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+    <main class="checkout-wrapper">
+        <!-- Top Back Link -->
+        <header class="checkout-header">
+            <a href="shopping.html" class="back-btn" id="backBtn" aria-label="Go back">
+                <svg class="back-arrow-svg" viewBox="0 0 32 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 1L2 7l10 6M2 7h30"/>
+                </svg>
+            </a>
+            <h1 class="checkout-title">CHECKOUT</h1>
+
+            <!-- Step Navigation Tabs -->
+            <nav class="checkout-steps" aria-label="Checkout Steps">
+                <span class="step-tab active" id="stepInfo">INFORMATION</span>
+                <span class="step-tab" id="stepShipping">SHIPPING</span>
+                <span class="step-tab" id="stepPayment">PAYMENT</span>
+            </nav>
+        </header>
+
+        <!-- Main Layout: Form (Left) & Your Order (Right) -->
+        <div class="checkout-grid">
+            
+            <!-- LEFT COLUMN: Form -->
+            <section class="checkout-form-section">
+                <form id="checkoutForm" novalidate>
+                    
+                    <!-- CONTACT INFO -->
+                    <div class="form-block">
+                        <h2 class="section-title">CONTACT INFO</h2>
+                        <div class="form-group">
+                            <input type="email" id="email" class="checkout-input" placeholder="Email" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" class="checkout-input" placeholder="Phone" required autocomplete="tel">
+                        </div>
+                    </div>
+
+                    <!-- SHIPPING ADDRESS -->
+                    <div class="form-block">
+                        <h2 class="section-title">SHIPPING ADDRESS</h2>
+                        <div class="form-row">
+                            <input type="text" id="firstName" class="checkout-input" placeholder="First Name" required autocomplete="given-name">
+                            <input type="text" id="lastName" class="checkout-input" placeholder="Last Name" required autocomplete="family-name">
+                        </div>
+                        <div class="select-wrapper">
+                            <select id="country" class="checkout-input" required autocomplete="country">
+                                <option value="" disabled selected hidden>Country</option>
+                                <option value="United States">United States</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="Germany">Germany</option>
+                                <option value="France">France</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Spain">Spain</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Japan">Japan</option>
+                                <option value="Russia">Russia</option>
+                                <option value="Kazakhstan">Kazakhstan</option>
+                            </select>
+                            <svg class="select-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 1.5l5 5 5-5"/>
+                            </svg>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="state" class="checkout-input" placeholder="State / Region" autocomplete="address-level1">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="address" class="checkout-input" placeholder="Address" required autocomplete="street-address">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" id="city" class="checkout-input" placeholder="City" required autocomplete="address-level2">
+                            <input type="text" id="postalCode" class="checkout-input" placeholder="Postal Code" required autocomplete="postal-code">
+                        </div>
+                    </div>
+
+                    <!-- Action Button: Shipping -> -->
+                    <div class="form-actions">
+                        <button type="submit" id="btnToShipping" class="btn-shipping">
+                            <span>Shipping</span>
+                            <svg width="28" height="12" viewBox="0 0 28 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 1l5 5-5 5M0 6h27"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                </form>
+            </section>
+
+            <!-- RIGHT COLUMN: YOUR ORDER -->
+            <aside class="order-summary-card" aria-label="Order Summary">
+                <div class="order-header">
+                    <h2 class="order-title">YOUR ORDER</h2>
+                    <span class="order-badge" id="orderCountBadge">(2)</span>
+                </div>
+
+                <!-- Products list in order -->
+                <div class="order-items-list" id="orderItemsList">
+                    <!-- Default items matching Screenshot 1 1:1, dynamically updated if cart has items -->
+                    <div class="order-item" data-id="4">
+                        <div class="item-thumb-box">
+                            <img src="./src/Clothes/10/1.png" alt="Basic Heavy T-Shirt">
+                        </div>
+                        <div class="item-details">
+                            <div class="item-name">Basic Heavy T-Shirt</div>
+                            <div class="item-variant">Black / L</div>
+                            <div class="item-qty-badge">(1)</div>
+                        </div>
+                        <div class="item-actions-price">
+                            <a href="shopping.html" class="item-change-link">Change</a>
+                            <div class="item-price">$ 99</div>
+                        </div>
+                    </div>
+
+                    <div class="order-item" data-id="2">
+                        <div class="item-thumb-box">
+                            <img src="./src/Clothes/8/1.png" alt="Basic Fit T-Shirt">
+                        </div>
+                        <div class="item-details">
+                            <div class="item-name">Basic Fit T-Shirt</div>
+                            <div class="item-variant">Black / L</div>
+                            <div class="item-qty-badge">(1)</div>
+                        </div>
+                        <div class="item-actions-price">
+                            <a href="shopping.html" class="item-change-link">Change</a>
+                            <div class="item-price">$ 90</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-divider"></div>
+
+                <!-- Financial totals breakdown -->
+                <div class="order-totals">
+                    <div class="total-line">
+                        <span>Subtotal</span>
+                        <span id="orderSubtotal">$180.00</span>
+                    </div>
+                    <div class="total-line shipping-line">
+                        <span>Shipping</span>
+                        <span class="shipping-calc-text">Calculated at next step</span>
+                    </div>
+                    <div class="order-divider"></div>
+                    <div class="total-line grand-total-line">
+                        <span>Total</span>
+                        <span class="grand-total-price" id="orderTotal">$180.00</span>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <script src="profile-manager.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>

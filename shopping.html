@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Shopping Bag — XIV STORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='17.5' width='24.7487' height='24.7487' transform='rotate(45 17.5 0)' fill='%23D9D9D9'/%3E%3Cpath d='M34.6466 17.5002L17.75 34.3969V0.603527L34.6466 17.5002Z' fill='black' stroke='%23060606' stroke-width='0.5'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="shopping.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+    <!-- TOP NAVIGATION BAR (1:1 Screenshot 2) -->
+    <header class="site-navbar">
+        <div class="nav-left">
+            <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Collections</a>
+                <a href="products.html?filter=new" class="nav-link">New</a>
+            </nav>
+        </div>
+
+        <div class="nav-right">
+            <!-- Wishlist Heart Button -->
+            <button class="nav-circle-btn" id="navFavBtn" aria-label="Favourites">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+            </button>
+
+            <!-- Cart Pill Navigation -->
+            <a href="checkout.html" class="nav-cart-pill" aria-label="Cart">
+                <span class="cart-pill-label">Cart</span>
+                <span class="cart-pill-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <path d="M16 10a4 4 0 0 1-8 0"/>
+                    </svg>
+                </span>
+            </a>
+
+            <!-- User Profile Button -->
+            <button class="nav-circle-btn profile" id="navProfileBtn" aria-label="User profile">
+                <svg viewBox="0 0 24 24" fill="#ffffff" width="18" height="18">
+                    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21.6h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" fill="#ffffff"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div id="mobileNavOverlay" class="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Site Navigation">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer">
+            <div class="mobile-nav-header">
+                <span class="mobile-nav-brand">XIV COLLECTIONS</span>
+                <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Menu">
+                    <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L17 17M17 1L1 17" stroke="#111111" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-nav-body">
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    <li><a href="products.html" class="mobile-nav-link">All Products</a></li>
+                    <li><a href="favourites.html" class="mobile-nav-link">Wishlist</a></li>
+                    <li><a href="shopping.html" class="mobile-nav-link active">Shopping Bag</a></li>
+                    <li><a href="checkout.html" class="mobile-nav-link">Checkout</a></li>
+                    <li><a href="index.html#collectionsSection" class="mobile-nav-link">XIV Collections 23-24</a></li>
+                    <li><a href="index.html#newThisWeekSection" class="mobile-nav-link">New This Week</a></li>
+                    <li><a href="index.html#dzLookbook" class="mobile-nav-link">Lookbook</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- TABS SECTION -->
+    <div class="bag-header-section">
+        <div class="bag-tabs">
+            <button class="bag-tab active" id="tabShoppingBag">SHOPPING BAG</button>
+            <button class="bag-tab" id="tabFavourites">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                FAVOURITES
+            </button>
+        </div>
+        <div class="bag-divider"></div>
+    </div>
+
+    <!-- MAIN SHOPPING CONTENT -->
+    <main class="shopping-main-wrapper">
+        <div class="shopping-layout">
+            
+            <!-- LEFT: GRID OF CART ITEMS -->
+            <section class="bag-grid-section">
+                <div class="bag-grid" id="bagGrid">
+                    
+                    <!-- ITEM CARD 1: Full Sleeve Zipper -->
+                    <article class="bag-item-card" data-id="4">
+                        <div class="bag-card-top">
+                            <div class="bag-card-media">
+                                <img src="./src/Clothes/10/1.png" alt="Full Sleeve Zipper" id="img-4">
+                                <button class="bag-photo-fav-btn" data-action="fav" aria-label="Save to favourites">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="bag-card-controls">
+                                <button class="ctrl-remove-btn" data-action="remove" data-id="4" title="Remove item">✕</button>
+                                <span class="ctrl-size-badge">L</span>
+                                <span class="ctrl-color-swatch" style="background-color: #111111;" title="Color: Black"></span>
+                                <div class="ctrl-stepper">
+                                    <button class="step-btn" data-action="inc" data-id="4" title="Increase quantity">+</button>
+                                    <span class="step-value" data-id="4">1</span>
+                                    <button class="step-btn" data-action="dec" data-id="4" title="Decrease quantity">-</button>
+                                </div>
+                                <button class="ctrl-swap-btn" data-action="swap" data-id="4" title="Cycle views">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bag-card-meta">
+                            <div class="bag-item-category">Cotton T Shirt</div>
+                            <div class="bag-item-title-row">
+                                <span class="bag-item-title">Full Sleeve Zipper</span>
+                                <span class="bag-item-price">$ 99</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ITEM CARD 2: Basic Slim Fit T-Shirt -->
+                    <article class="bag-item-card" data-id="2">
+                        <div class="bag-card-top">
+                            <div class="bag-card-media">
+                                <img src="./src/Clothes/8/1.png" alt="Basic Slim Fit T-Shirt" id="img-2">
+                                <button class="bag-photo-fav-btn" data-action="fav" aria-label="Save to favourites">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="bag-card-controls">
+                                <button class="ctrl-remove-btn" data-action="remove" data-id="2" title="Remove item">✕</button>
+                                <span class="ctrl-size-badge">L</span>
+                                <span class="ctrl-color-swatch" style="background-color: #111111;" title="Color: Black"></span>
+                                <div class="ctrl-stepper">
+                                    <button class="step-btn" data-action="inc" data-id="2" title="Increase quantity">+</button>
+                                    <span class="step-value" data-id="2">1</span>
+                                    <button class="step-btn" data-action="dec" data-id="2" title="Decrease quantity">-</button>
+                                </div>
+                                <button class="ctrl-swap-btn" data-action="swap" data-id="2" title="Cycle views">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bag-card-meta">
+                            <div class="bag-item-category">Cotton T Shirt</div>
+                            <div class="bag-item-title-row">
+                                <span class="bag-item-title">Basic Slim Fit T-Shirt</span>
+                                <span class="bag-item-price">$ 99</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- RIGHT: ORDER SUMMARY BOX -->
+            <aside class="order-summary-box" aria-label="Order Summary">
+                <h2 class="summary-title">ORDER SUMMARY</h2>
+                
+                <div class="summary-lines">
+                    <div class="summary-line">
+                        <span>Subtotal</span>
+                        <span id="subtotalVal">$180</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Shipping</span>
+                        <span id="shippingVal">$10</span>
+                    </div>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-lines">
+                    <div class="summary-line total-line">
+                        <span>TOTAL <span class="tax-incl">(TAX INCL.)</span></span>
+                        <span id="totalVal">$190</span>
+                    </div>
+                </div>
+
+                <!-- Terms and conditions -->
+                <div class="summary-terms">
+                    <label class="terms-label" for="termsAgree">
+                        <input type="checkbox" id="termsAgree" class="terms-checkbox" checked>
+                        <span>I agree to the Terms and Conditions</span>
+                    </label>
+                </div>
+
+                <!-- Continue Button -->
+                <button type="button" class="btn-continue" id="btnContinue">CONTINUE</button>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- VISA PAYMENT MODAL (Opens on CONTINUE click) -->
+    <div id="checkoutModalOverlay" class="checkout-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle">
+        <div class="checkout-modal" id="checkoutModal">
+            <!-- Modal Close Button -->
+            <button class="modal-close-btn" id="checkoutModalClose" aria-label="Close checkout">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L17 17M17 1L1 17" stroke="#111111" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+            </button>
+
+            <!-- STEP 1: CARD FORM VIEW -->
+            <div class="checkout-view" id="checkoutFormView">
+                <div class="modal-header-block">
+                    <span class="modal-security-badge">SECURE 256-BIT ENCRYPTION</span>
+                    <h3 class="modal-header-title" id="checkoutModalTitle">VISA PAYMENT</h3>
+                    <p class="modal-header-desc">Enter card details to complete your order</p>
+                </div>
+
+                <!-- Interactive 3D Visa Card Preview -->
+                <div class="card-3d-wrap" id="card3DWrap">
+                    <div class="credit-card-preview" id="cardPreview">
+                        <div class="card-glass-shine" id="cardGlassShine"></div>
+                        <div class="card-top-row">
+                            <div class="card-chip">
+                                <div class="chip-line"></div>
+                                <div class="chip-line"></div>
+                                <div class="chip-line"></div>
+                            </div>
+                            <div class="card-brand-logo">
+                                <svg width="54" height="18" viewBox="0 0 54 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22.5 0.5L14.7 17.5H9.6L5.9 4.2C5.7 3.3 5.5 3.0 4.8 2.6C3.7 2.0 1.7 1.4 0 1.0L0.2 0.5H8.3C9.4 0.5 10.3 1.2 10.6 2.5L12.6 13.5L17.6 0.5H22.5ZM42.7 12.0C42.7 7.7 36.8 7.5 36.8 5.6C36.9 5.0 37.4 4.3 38.7 4.2C39.3 4.1 41.0 4.0 42.8 4.9L43.6 1.4C42.5 1.0 41.2 0.6 39.4 0.6C34.3 0.6 30.6 3.4 30.6 7.4C30.6 10.4 33.2 12.0 35.1 13.0C37.2 14.0 37.9 14.6 37.8 15.5C37.8 16.9 36.2 17.5 34.7 17.5C32.3 17.5 30.8 16.8 29.7 16.3L28.9 19.9C30.2 20.5 32.2 21.0 34.4 21.0C39.9 21.0 43.4 18.2 43.5 14.0L42.7 12.0ZM56.0 17.5H60.3L56.5 0.5H52.6C51.7 0.5 50.9 1.0 50.6 1.9L43.2 17.5H48.4L49.4 14.6H55.7L56.0 17.5ZM50.8 10.7L53.4 3.4L54.9 10.7H50.8ZM29.5 0.5L25.6 17.5H20.7L24.6 0.5H29.5Z" transform="scale(0.85)" fill="#FFFFFF"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="card-number-display" id="cardPreviewNumber">•••• •••• •••• ••••</div>
+
+                        <div class="card-bottom-row">
+                            <div class="card-holder-wrap">
+                                <span class="card-lbl">CARD HOLDER</span>
+                                <span class="card-val" id="cardPreviewName">ALEXANDER SMITH</span>
+                            </div>
+                            <div class="card-expiry-wrap">
+                                <span class="card-lbl">EXPIRES</span>
+                                <span class="card-val" id="cardPreviewExpiry">12/28</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Details Form -->
+                <form id="cardPaymentForm" class="checkout-form" autocomplete="off">
+                    <div class="form-group">
+                        <label for="cardNumberInput">Card Number</label>
+                        <div class="input-with-icon">
+                            <input type="text" id="cardNumberInput" name="cardnumber" placeholder="4400 1234 5678 9010" maxlength="19" inputmode="numeric" required>
+                            <span class="input-card-icon" aria-hidden="true">
+                                <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="32" height="20" rx="3" fill="#0E4595"/>
+                                    <path d="M13.2 6.2L10.9 14.8H8.8L7.2 8.1C7.1 7.6 6.9 7.4 6.5 7.2C5.8 6.8 4.7 6.5 3.6 6.3L3.7 6.2H7.7C8.2 6.2 8.7 6.6 8.8 7.2L9.8 12.8L12.1 6.2H13.2ZM18.6 12.0C18.6 9.8 15.6 9.7 15.7 8.7C15.7 8.4 16.0 8.1 16.6 8.0C16.9 8.0 17.8 7.9 18.7 8.4L19.1 6.6C18.6 6.4 17.9 6.2 17.0 6.2C14.4 6.2 12.6 7.6 12.6 9.6C12.6 11.1 13.9 11.9 14.9 12.4C15.9 12.9 16.3 13.2 16.3 13.7C16.3 14.4 15.5 14.7 14.7 14.7C13.5 14.7 12.7 14.3 12.2 14.1L11.7 15.9C12.4 16.2 13.4 16.5 14.5 16.5C17.3 16.5 19.1 15.1 19.1 13.0L18.6 12.0ZM25.3 14.8H27.2L25.6 6.2H23.9C23.4 6.2 23.0 6.5 22.9 6.9L19.5 14.8H21.7L22.2 13.5H24.9L25.3 14.8ZM22.8 12.0L23.9 8.8L24.5 12.0H22.8ZM15.9 6.2L13.9 14.8H11.8L13.8 6.2H15.9Z" fill="#FFFFFF"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cardNameInput">Cardholder Name</label>
+                        <input type="text" id="cardNameInput" name="cardname" placeholder="ALEXANDER SMITH" maxlength="28" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-half">
+                            <label for="cardExpiryInput">Expiration Date</label>
+                            <input type="text" id="cardExpiryInput" name="cardexpiry" placeholder="12/28" maxlength="5" inputmode="numeric" required>
+                        </div>
+                        <div class="form-group col-half">
+                            <label for="cardCvvInput">CVV / CVC</label>
+                            <input type="password" id="cardCvvInput" name="cardcvv" placeholder="•••" maxlength="4" inputmode="numeric" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="pay-submit-btn" id="paySubmitBtn">
+                        <span class="pay-btn-text">PAY</span>
+                        <span class="pay-btn-amount" id="modalPayAmount">$190</span>
+                        <svg class="pay-btn-lock" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- STEP 2: PROCESSING & SUCCESS VIEW -->
+            <div class="checkout-view is-hidden" id="checkoutProcessView">
+                <div class="payment-animation-stage">
+                    <div class="spinner-checkmark-container" id="spinnerCheckmarkContainer">
+                        <!-- SVG Animation Element -->
+                        <svg class="payment-status-svg" viewBox="0 0 100 100" width="110" height="110">
+                            <!-- Background Track -->
+                            <circle class="ring-bg-track" cx="50" cy="50" r="42" fill="none" stroke-width="6"/>
+                            <!-- Incomplete Rotating & Chasing Green Ring -->
+                            <circle class="ring-spinner-circle" id="ringSpinnerCircle" cx="50" cy="50" r="42" fill="none" stroke-width="6" stroke-linecap="round"/>
+                            <!-- Solid Green Filling Circle -->
+                            <circle class="success-circle-bg" id="successCircleBg" cx="50" cy="50" r="42" fill="#10b981"/>
+                            <!-- White Checkmark Path -->
+                            <path class="success-checkmark-path" id="successCheckmarkPath" d="M30 52 L43 65 L70 37" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <!-- Confetti Burst Container -->
+                    <div class="confetti-container" id="confettiContainer"></div>
+                </div>
+
+                <div class="payment-status-content" id="paymentStatusContent">
+                    <!-- Dynamic state: Processing -->
+                    <div class="status-state-processing" id="statusStateProcessing">
+                        <h4>PROCESSING PAYMENT</h4>
+                        <p>Securing transaction with payment gateway...</p>
+                        <div class="pulse-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic state: Success -->
+                    <div class="status-state-success is-hidden" id="statusStateSuccess">
+                        <div class="success-badge">ORDER CONFIRMED</div>
+                        <h4 class="success-title">PAYMENT SUCCESSFUL</h4>
+                        <p class="success-desc">Thank you for your purchase! Your order has been placed and is being prepared.</p>
+
+                        <div class="order-receipt-card">
+                            <div class="receipt-row">
+                                <span class="receipt-label">Order Reference</span>
+                                <span class="receipt-value" id="receiptOrderId">#ORD-94821</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">Amount Paid</span>
+                                <span class="receipt-value receipt-amount" id="receiptAmount">$190</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">Payment Method</span>
+                                <span class="receipt-value" id="receiptCard">Visa •••• 4400</span>
+                            </div>
+                        </div>
+
+                        <!-- Auto Redirect Progress -->
+                        <div class="redirect-countdown-wrap">
+                            <span class="redirect-countdown-text" id="redirectText">Redirecting to store in 3s...</span>
+                            <div class="redirect-progress-bar">
+                                <div class="redirect-progress-fill" id="redirectProgressFill"></div>
+                            </div>
+                        </div>
+
+                        <button class="payment-done-btn" id="paymentDoneBtn">
+                            <span>CONTINUE SHOPPING</span>
+                            <svg width="18" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 6H22M17 1L22 6L17 11" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Cinematic Curtain Screen Wipe for Redirect -->
+    <div id="screenCurtain" class="screen-curtain"></div>
+
+    <script src="favourites-manager.js"></script>
+    <script src="profile-manager.js"></script>
+    <script src="shopping.js"></script>
+</body>
+</html>

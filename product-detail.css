@@ -1,0 +1,622 @@
+/* ==========================================================================
+   PRODUCT DETAILS PAGE (PDP) STYLESHEET
+   Faithfully matched to media_1788789637734.png
+   ========================================================================== */
+
+.pdp-body {
+    background-color: #f7f7f7;
+    color: #111111;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.pdp-navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.pdp-main-wrap {
+    padding: 36px 0 90px;
+}
+
+.pdp-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* --- Breadcrumb Navigation --- */
+.pdp-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: #888888;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+}
+
+.pdp-breadcrumb a {
+    color: #777777;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.pdp-breadcrumb a:hover {
+    color: #111111;
+}
+
+.pdp-breadcrumb .sep {
+    color: #b8b8b8;
+}
+
+.pdp-breadcrumb .active {
+    color: #111111;
+    font-weight: 600;
+}
+
+/* --- 3-Zone Showcase Layout --- */
+.pdp-showcase {
+    display: grid;
+    grid-template-columns: minmax(360px, 520px) 76px minmax(320px, 390px);
+    gap: 28px;
+    justify-content: center;
+    align-items: start;
+}
+
+/* --- ZONE 1: Large Main Photo Box --- */
+.pdp-main-media-box {
+    width: 100%;
+    position: relative;
+}
+
+.pdp-hero-image-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #ffffff;
+    border: 1px solid #ebebeb;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    cursor: zoom-in;
+    user-select: none;
+}
+
+.pdp-hero-image-wrap.is-zoomed {
+    cursor: crosshair;
+}
+
+.pdp-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform-origin: center center;
+    pointer-events: none;
+    will-change: transform, transform-origin;
+    transition: opacity 0.24s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle luxury zoom indicator badge */
+.pdp-zoom-indicator {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding: 6px 13px 6px 10px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #444444;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    z-index: 2;
+}
+
+.pdp-zoom-indicator svg {
+    color: #111111;
+}
+
+.pdp-hero-image-wrap.is-zoomed .pdp-zoom-indicator {
+    opacity: 0;
+    transform: translateY(6px);
+}
+
+@media (hover: none) {
+    .pdp-hero-image-wrap {
+        cursor: default;
+    }
+
+    .pdp-zoom-indicator {
+        display: none;
+    }
+}
+
+/* --- ZONE 2: Vertical Thumbnails Rail (5 Angles) --- */
+.pdp-thumbs-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pdp-thumb-btn {
+    width: 72px;
+    height: 72px;
+    aspect-ratio: 1 / 1;
+    background: #ffffff;
+    border: 1.5px solid transparent;
+    border-radius: 2px;
+    overflow: hidden;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.pdp-thumb-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.pdp-thumb-btn:hover {
+    border-color: #999999;
+    transform: scale(1.03);
+}
+
+.pdp-thumb-btn.is-active {
+    border-color: #111111;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* --- ZONE 3: Editorial Purchase Panel --- */
+.pdp-purchase-card {
+    background: #ffffff;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    padding: 34px 30px 30px;
+    position: relative;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+}
+
+.pdp-card-tag-btn {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #333333;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.pdp-card-tag-btn:hover {
+    transform: scale(1.15);
+    color: #000000;
+}
+
+.pdp-card-tag-btn.is-saved svg {
+    fill: #111111;
+}
+
+.pdp-title {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: #111111;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+    line-height: 1.25;
+    padding-right: 32px;
+}
+
+.pdp-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 3px;
+}
+
+.pdp-tax-note {
+    font-size: 12px;
+    color: #888888;
+    margin-bottom: 22px;
+    letter-spacing: 0.02em;
+}
+
+.pdp-description {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: #2b2b2b;
+    font-weight: 500;
+    margin: 0 0 28px;
+}
+
+/* Option Groups: Color & Size */
+.pdp-option-group {
+    margin-bottom: 24px;
+}
+
+.pdp-option-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #666666;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+}
+
+/* Color Swatches */
+.pdp-colors-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pdp-color-swatch {
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+    transition: all 0.18s ease;
+    background-color: #111111;
+}
+
+.pdp-color-swatch:hover {
+    transform: scale(1.08);
+}
+
+.pdp-color-swatch.is-active {
+    outline: 2px solid #111111;
+    outline-offset: 2px;
+}
+
+/* Diagonal Out of Stock Slash on Swatch */
+.pdp-color-swatch.is-slashed::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top right, transparent calc(50% - 1px), #333333 calc(50% - 1px), #333333 calc(50% + 1px), transparent calc(50% + 1px));
+}
+
+/* Size Selector Row */
+.pdp-sizes-row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.pdp-size-btn {
+    width: 38px;
+    height: 38px;
+    border: 1px solid #dcdcdc;
+    background: #ffffff;
+    color: #111111;
+    font-size: 11.5px;
+    font-weight: 700;
+    border-radius: 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.18s ease;
+    user-select: none;
+}
+
+.pdp-size-btn:hover:not(.is-disabled) {
+    border-color: #111111;
+}
+
+.pdp-size-btn.is-active {
+    background: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+.pdp-size-btn.is-disabled {
+    opacity: 0.35;
+    background: #f7f7f7;
+    color: #999999;
+    cursor: not-allowed;
+    position: relative;
+}
+
+.pdp-size-btn.is-disabled::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    right: 4px;
+    height: 1px;
+    background: #aaaaaa;
+    transform: rotate(-30deg);
+}
+
+/* Guide Link */
+.pdp-guide-link-wrap {
+    margin-top: 14px;
+}
+
+.pdp-guide-link {
+    background: none;
+    border: none;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #666666;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    transition: color 0.15s ease;
+}
+
+.pdp-guide-link:hover {
+    color: #111111;
+}
+
+/* ADD Button */
+.pdp-add-btn {
+    width: 100%;
+    height: 48px;
+    background: #d8d8d8;
+    color: #111111;
+    border: none;
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 26px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pdp-add-btn:hover {
+    background: #111111;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
+}
+
+.pdp-add-btn.is-added {
+    background: #10b981;
+    color: #ffffff;
+}
+
+/* Stock Status */
+.pdp-stock-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    font-size: 12px;
+    color: #555555;
+    font-weight: 500;
+}
+
+.stock-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #10b981;
+    display: inline-block;
+}
+
+.pdp-stock-status.is-out-of-stock .stock-dot {
+    background: #e74c3c;
+}
+
+.pdp-stock-status.is-out-of-stock .stock-text {
+    color: #c0392b;
+}
+
+/* --- Size Guide Modal --- */
+.size-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.size-modal-overlay.is-open {
+    display: flex;
+    animation: modalFadeIn 0.25s ease forwards;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.size-modal {
+    background: #ffffff;
+    width: 100%;
+    max-width: 520px;
+    border-radius: 4px;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.size-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 26px;
+    line-height: 1;
+    color: #888;
+    cursor: pointer;
+}
+
+.size-modal-close:hover {
+    color: #111;
+}
+
+.size-modal-header {
+    margin-bottom: 24px;
+}
+
+.pre-heading {
+    font-size: 11px;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.size-modal-header h3 {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    margin: 0;
+}
+
+.size-chart-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.size-chart-table th,
+.size-chart-table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.size-chart-table th {
+    font-weight: 700;
+    color: #555;
+    background: #f9f9f9;
+}
+
+.measure-tip {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666;
+    background: #f5f5f5;
+    padding: 12px 14px;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT (Mobile, Tablet, Desktop)
+   ========================================================================== */
+
+@media (max-width: 1060px) {
+    .pdp-showcase {
+        grid-template-columns: minmax(320px, 440px) 70px minmax(280px, 340px);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 880px) {
+    .pdp-main-wrap {
+        padding: 20px 0 60px;
+    }
+
+    .pdp-container {
+        padding: 0 16px;
+    }
+
+    .pdp-showcase {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .pdp-hero-image-wrap {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    /* Horizontal thumbnail strip on mobile */
+    .pdp-thumbs-rail {
+        flex-direction: row;
+        justify-content: center;
+        overflow-x: auto;
+        padding-bottom: 6px;
+    }
+
+    .pdp-thumb-btn {
+        width: 64px;
+        height: 64px;
+        flex-shrink: 0;
+    }
+
+    .pdp-purchase-card {
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .pdp-main-wrap {
+        padding: 16px 0 44px;
+    }
+
+    .pdp-container {
+        padding: 0 12px;
+    }
+
+    .pdp-title {
+        font-size: 16px;
+    }
+
+    .pdp-thumb-btn {
+        width: 54px;
+        height: 54px;
+    }
+
+    .pdp-purchase-card {
+        padding: 22px 18px 18px;
+    }
+
+    .pdp-size-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 11px;
+    }
+
+    .pdp-add-btn {
+        height: 44px;
+        font-size: 12px;
+    }
+}
+

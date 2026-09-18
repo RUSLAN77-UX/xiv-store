@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en" class="preloader-locked">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='17.5' width='24.7487' height='24.7487' transform='rotate(45 17.5 0)' fill='%23D9D9D9'/%3E%3Cpath d='M34.6466 17.5002L17.75 34.3969V0.603527L34.6466 17.5002Z' fill='black' stroke='%23060606' stroke-width='0.5'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
+    <title>XIV STORE — High Fashion & Collections</title>
+</head>
+
+<body class="preloader-locked">
+    <div id="preloader" class="preloader">
+        <!-- High Fashion Curtain Columns for seamless reveal -->
+        <div class="preloader-curtains">
+            <div class="curtain-col" style="--col-idx: 0;"></div>
+            <div class="curtain-col" style="--col-idx: 1;"></div>
+            <div class="curtain-col" style="--col-idx: 2;"></div>
+            <div class="curtain-col" style="--col-idx: 3;"></div>
+            <div class="curtain-col" style="--col-idx: 4;"></div>
+        </div>
+
+        <!-- Central 5-Letter STORE Dispersible Loader -->
+        <div class="preloader-content">
+            <div class="preloader-store-wrap" id="storeWrap">
+                <div class="store-letter-slot" data-index="0">
+                    <span class="letter-outline">S</span>
+                    <span class="letter-fill">S</span>
+                </div>
+                <div class="store-letter-slot" data-index="1">
+                    <span class="letter-outline">T</span>
+                    <span class="letter-fill">T</span>
+                </div>
+                <div class="store-letter-slot" data-index="2">
+                    <span class="letter-outline">O</span>
+                    <span class="letter-fill">O</span>
+                </div>
+                <div class="store-letter-slot" data-index="3">
+                    <span class="letter-outline">R</span>
+                    <span class="letter-fill">R</span>
+                </div>
+                <div class="store-letter-slot" data-index="4">
+                    <span class="letter-outline">E</span>
+                    <span class="letter-fill">E</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <div class="container">
+            <!-- Mobile Menu Toggle Button (visible on mobile/tablet) -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#collectionsSection">Collections</a>
+                <a href="#collectionsSection">New</a>
+            </div>
+
+            <div class="logo">
+                <a href="#" aria-label="Store Home">
+                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="17.5" width="24.7487" height="24.7487" transform="rotate(45 17.5 0)" fill="#D9D9D9" />
+                        <path d="M34.6466 17.5002L17.75 34.3969V0.603527L34.6466 17.5002Z" fill="black" stroke="#060606"
+                            stroke-width="0.5" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="buttons">
+                <button class="favorites" aria-label="Wishlist">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.8059 16.6943L12.7597 15.9458L12.8059 16.6943ZM7.33268 6.82443L7.27619 7.5723C7.4795 7.58766 7.68029 7.51958 7.83234 7.38375C7.98439 7.24792 8.07458 7.05605 8.08216 6.8523L7.33268 6.82443ZM16.5254 13.3716L17.264 13.5015L16.5254 13.3716ZM12.7597 15.9458C11.1685 16.0438 9.53441 16.2341 7.93558 16.0486C6.37521 15.8676 4.93302 15.3326 3.75939 14.0189L2.64075 15.0182C4.12626 16.6811 5.95231 17.3286 7.76272 17.5386C9.53468 17.7442 11.3739 17.534 12.852 17.4429L12.7597 15.9458ZM3.75939 14.0189C2.61677 12.7398 2.3858 11.0269 2.96459 9.70578C3.52252 8.43233 4.89677 7.39259 7.27619 7.5723L7.38916 6.07656C4.45773 5.85516 2.43611 7.17414 1.59067 9.10384C0.766087 10.9859 1.12425 13.3206 2.64075 15.0182L3.75939 14.0189ZM12.852 17.4429C13.3848 17.4101 13.9662 17.3726 14.4961 17.265C15.0257 17.1575 15.5862 16.9652 16.0342 16.565L15.0349 15.4464C14.8709 15.5929 14.6086 15.7116 14.1976 15.795C13.7869 15.8784 13.3101 15.9118 12.7597 15.9458L12.852 17.4429ZM17.264 13.5015C17.5206 12.043 17.936 10.239 17.9307 8.45517C17.9254 6.63262 17.4871 4.74539 16.0016 3.08251L14.8829 4.08183C16.0566 5.3956 16.4261 6.88874 16.4307 8.45957C16.4355 10.0691 16.0629 11.6715 15.7867 13.2417L17.264 13.5015ZM16.0016 3.08251C14.4851 1.38493 12.2054 0.766811 10.2426 1.37478C8.23015 1.99813 6.69245 3.85881 6.5832 6.79656L8.08216 6.8523C8.17084 4.46776 9.35835 3.21898 10.6864 2.80762C12.0641 2.38087 13.7403 2.80277 14.8829 4.08183L16.0016 3.08251ZM15.7867 13.2417C15.6912 13.7847 15.6044 14.2548 15.4754 14.6535C15.3464 15.0525 15.199 15.2998 15.0349 15.4464L16.0342 16.565C16.4823 16.1647 16.7363 15.6293 16.9026 15.1152C17.069 14.6007 17.1716 14.0272 17.264 13.5015L15.7867 13.2417Z"
+                            fill="white" />
+                    </svg>
+                </button>
+
+                <button class="cart" id="navCartBtn" aria-label="Open Cart">
+                    <span class="cart-btn-text">Cart <b id="navCartCount" class="cart-nav-badge">0</b></span>
+                    <span class="cart-btn-icon">
+                        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="18.5185" cy="18.5185" r="18.5185" fill="white" />
+                            <path
+                                d="M12.4348 24.3441C12.4348 24.3441 12.4348 24.3441 12.4348 24.3441C13.367 25.5185 15.1019 25.5185 18.5717 25.5185H19.1321C22.602 25.5185 24.3369 25.5185 25.2691 24.3441M12.4348 24.3441C11.5026 23.1697 11.8224 21.3867 12.4618 17.8206C12.9166 15.2847 13.1439 14.0167 14.0072 13.2676M25.2691 24.3441C25.2691 24.3441 25.2691 24.3441 25.2691 24.3441C26.2012 23.1697 25.8815 21.3867 25.242 17.8206C24.7873 15.2847 24.5599 14.0167 23.6967 13.2676M23.6967 13.2676C23.6967 13.2676 23.6967 13.2676 23.6967 13.2676C22.8335 12.5185 21.5997 12.5185 19.1321 12.5185H18.5717C16.1042 12.5185 14.8704 12.5185 14.0072 13.2676C14.0072 13.2676 14.0072 13.2676 14.0072 13.2676"
+                                stroke="black" stroke-width="1.5" />
+                            <path
+                                d="M16.8519 15.5185C17.1431 16.6837 17.9286 17.5185 18.8519 17.5185C19.7753 17.5185 20.5608 16.6837 20.8519 15.5185"
+                                stroke="black" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </span>
+                </button>
+                <button class="profile" id="navProfileBtn" aria-label="User Profile">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
+                        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21.6h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" fill="#ffffff"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HIGH FASHION EDITORIAL MOBILE NAVIGATION DRAWER -->
+    <div id="mobileNavOverlay" class="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Site Navigation">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer">
+            <div class="mobile-nav-header">
+                <span class="mobile-nav-brand">XIV COLLECTIONS</span>
+                <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Menu">
+                    <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L17 17M17 1L1 17" stroke="#111111" stroke-width="1.6" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="mobile-nav-content">
+                <div class="mobile-nav-group">
+                    <span class="mobile-nav-label">DISCOVER</span>
+                    <ul class="mobile-nav-links">
+                        <li><a href="#" class="mobile-link" data-action="home">HOME <span
+                                    class="link-arrow">→</span></a></li>
+                        <li><a href="#newThisWeekSection" class="mobile-link" data-action="new">NEW THIS WEEK <span
+                                    class="link-arrow">→</span></a></li>
+                        <li><a href="#collectionsSection" class="mobile-link" data-action="collections"
+                                data-filter="ALL">XIV COLLECTIONS <span class="link-arrow">→</span></a></li>
+                        <li><a href="#dzLookbook" class="mobile-link" data-action="lookbook">LOOKBOOK 23-24 <span
+                                    class="link-arrow">→</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="mobile-nav-group">
+                    <span class="mobile-nav-label">CATEGORIES</span>
+                    <div class="mobile-cat-chips">
+                        <button class="mobile-cat-btn" data-cat="Men">MEN</button>
+                        <button class="mobile-cat-btn" data-cat="Women">WOMEN</button>
+                        <button class="mobile-cat-btn" data-cat="KID">KIDS</button>
+                    </div>
+                </div>
+
+                <div class="mobile-nav-group mobile-nav-footer-group">
+                    <span class="mobile-nav-label">BAG & FAVOURITES</span>
+                    <div class="mobile-quick-actions">
+                        <button class="mobile-action-btn" id="mobileDrawerCartBtn">
+                            <span>SHOPPING BAG</span>
+                            <span class="mobile-cart-badge" id="mobileDrawerCartCount">0</span>
+                        </button>
+                        <button class="mobile-action-btn" id="mobileDrawerFavBtn">
+                            <span>SAVED PIECES</span>
+                            <span>♥</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-nav-bottom">
+                <span>&copy; 2024 XIV COLLECTIONS</span>
+                <span class="nfc-tag">NFC VERIFIED /</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="search">
+        <div class="container">
+            <div class="buttons">
+                <button class="variants var1">
+                    <span>MEN</span>
+                </button>
+
+                <button class="variants var2">
+                    <span>WOMEN</span>
+                </button>
+
+                <button class="variants var3">
+                    <span>KIDS</span>
+                </button>
+            </div>
+
+            <div class="search">
+                <span class="glass">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7.55834" cy="7.55834" r="6.80834" stroke="black" stroke-width="1.5" />
+                        <path d="M12.575 12.575L15.0833 15.0834" stroke="black" stroke-width="1.5"
+                            stroke-linecap="round" />
+                    </svg>
+                </span>
+
+                <input type="text">
+
+                <button class="find">
+                    Search
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hero">
+        <div class="container">
+            <div class="left-side">
+                <div class="info">
+                    <h1>NEW<br>COLLECTION</h1>
+                    <p>Summer<br>2024</p>
+                </div>
+                <div class="carousel-nav">
+                    <a href="products.html" class="shop-btn" aria-label="Go To Shop">
+                        <span>Go To Shop</span>
+                        <span class="icon-wrapper">
+                            <svg width="49" height="14" viewBox="0 0 49 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.75 6.75H48.25M42.25 12.75L48.25 6.75L42.25 0.75" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </a>
+                    <div class="nav-arrows">
+                        <button class="prev" aria-label="Previous slide">
+                            <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 11L1 6L6 1" stroke="#888888" stroke-width="1.2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <button class="next" aria-label="Next slide">
+                            <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 11L6 6L1 1" stroke="#1E1E1E" stroke-width="1.2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <img src="./src/Clothes/5/1.png" alt="ABSTRACT PRINT SHIRT">
+                            <img src="./src/Clothes/6/1.png" alt="ORNATE PATTERN SHIRT">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./src/Clothes/7/1.png" alt="GEOMETRIC PATTERN SHIRT">
+                            <img src="./src/Clothes/8/1.png" alt="ABSTRACT PRINT SHIRT">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./src/Clothes/9/1.png" alt="STRIPED FLORAL SHIRT">
+                            <img src="./src/Clothes/10/1.png" alt="FLORAL PRINT SHIRT">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./src/Clothes/1/1.png" alt="FLORAL PRINT SHIRT">
+                            <img src="./src/Clothes/2/1.png" alt="ORNATE PATTERN SHIRT">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./src/Clothes/3/1.png" alt="FLORAL PRINT SHIRT">
+                            <img src="./src/Clothes/4/1.png" alt="FLORAL PRINT SHIRT">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="new-this-week" id="newThisWeekSection">
+        <div class="container">
+            <div class="section-header">
+                <div class="title-wrap">
+                    <h2>NEW<br>THIS WEEK <span class="badge-count">(50)</span></h2>
+                </div>
+                <a href="#" class="see-all">See All</a>
+            </div>
+
+            <div class="products-carousel">
+                <div class="carousel-track">
+                    <!-- Slide 1 (4 items from screenshot) -->
+                    <div class="carousel-slide active">
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="./src/Clothes/7/1.png" alt="Embroidered Seersucker Shirt">
+                                
+                                <button type="button" class="card-fav-btn" data-id="1" data-name="Embroidered Seersucker Shirt" data-price="99" data-img="./src/Clothes/7/1.png" data-category="V-Neck T-Shirt" aria-label="Save to Favourites">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                </button>
+                                <button class="quick-add" aria-label="Add Embroidered Seersucker Shirt to Cart"
+                                    data-id="1" data-name="Embroidered Seersucker Shirt" data-category="V-Neck T-Shirt"
+                                    data-price="99" data-img="./src/Clothes/7/1.png">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 1V11M1 6H11" stroke="#333333" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-info">
+                                <div class="card-meta">
+                                    <span class="category">V-Neck T-Shirt</span>
+                                </div>
+                                <div class="card-main">
+                                    <h3 class="product-name">Embroidered Seersucker Shirt</h3>
+                                    <span class="price">$99</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="./src/Clothes/8/1.png" alt="Basic Slim Fit T-Shirt">
+                                
+                                <button type="button" class="card-fav-btn" data-id="2" data-name="Basic Slim Fit T-Shirt" data-price="99" data-img="./src/Clothes/8/1.png" data-category="Cotton T-Shirt" aria-label="Save to Favourites">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                </button>
+                                <button class="quick-add" aria-label="Add Basic Slim Fit T-Shirt to Cart" data-id="2"
+                                    data-name="Basic Slim Fit T-Shirt" data-category="Cotton T-Shirt" data-price="99"
+                                    data-img="./src/Clothes/8/1.png">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 1V11M1 6H11" stroke="#333333" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-info">
+                                <div class="card-meta">
+                                    <span class="category">Cotton T-Shirt</span>
+                                    <span class="color-badge"><span class="color-swatch"></span>+5</span>
+                                </div>
+                                <div class="card-main">
+                                    <h3 class="product-name">Basic Slim Fit T-Shirt</h3>
+                                    <span class="price">$99</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="./src/Clothes/9/1.png" alt="Blurred Print T-Shirt">
+                                
+                                <button type="button" class="card-fav-btn" data-id="3" data-name="Blurred Print T-Shirt" data-price="99" data-img="./src/Clothes/9/1.png" data-category="Henley T-Shirt" aria-label="Save to Favourites">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                </button>
+                                <button class="quick-add" aria-label="Add Blurred Print T-Shirt to Cart" data-id="3"
+                                    data-name="Blurred Print T-Shirt" data-category="Henley T-Shirt" data-price="99"
+                                    data-img="./src/Clothes/9/1.png">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 1V11M1 6H11" stroke="#333333" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-info">
+                                <div class="card-meta">
+                                    <span class="category">Henley T-Shirt</span>
+                                    <span class="color-badge"><span class="color-swatch"></span>+3</span>
+                                </div>
+                                <div class="card-main">
+                                    <h3 class="product-name">Blurred Print T-Shirt</h3>
+                                    <span class="price">$99</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="./src/Clothes/10/1.png" alt="Full Sleeve Zipper">
+                                
+                                <button type="button" class="card-fav-btn" data-id="4" data-name="Full Sleeve Zipper" data-price="99" data-img="./src/Clothes/10/1.png" data-category="Crewneck T-Shirt" aria-label="Save to Favourites">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                </button>
+                                <button class="quick-add" aria-label="Add Full Sleeve Zipper to Cart" data-id="4"
+                                    data-name="Full Sleeve Zipper" data-category="Crewneck T-Shirt" data-price="99"
+                                    data-img="./src/Clothes/10/1.png">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 1V11M1 6H11" stroke="#333333" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-info">
+                                <div class="card-meta">
+                                    <span class="category">Crewneck T-Shirt</span>
+                                    <span class="color-badge"><span class="color-swatch"></span>+2</span>
+                                </div>
+                                <div class="card-main">
+                                    <h3 class="product-name">Full Sleeve Zipper</h3>
+                                    <span class="price">$99</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 (Additional 4 items from bd.json) -->
+                    <div class="carousel-slide">
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="./src/Clothes/1/1.png" alt="Floral Print Shirt">
+                                
+                                <button type="button" class="card-fav-btn" data-id="5" data-name="Floral Print Shirt" data-price="99" data-img="./src/Clothes/1/1.png" data-category="Casual Shirt" aria-label="Save to Favourites">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                </button>
+                                <button class="quick-add" aria-label="Add Floral Print Shirt to Cart" data-id="5"
+                                    data-name="Floral Print Shirt" data-category="Casual Shirt" data-price="99"
+                                    data-img="./src/Clothes/1/1.png">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 1V11M1 6H11" stroke="#333333" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-info">
+                                <div class="card-meta">
+                                    <span class="category">Casual Shirt</span>
+                                    <span class="color-badge"><span class="color-swatch"></span>+4</span>
+                                </div>
+                                <div class="card-main">
+                                    <h3 class="product-name">Floral Print Shirt</h3>
+                                    <span class="price">$99</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="./src/Clothes/2/1.png" alt="Ornate Pattern Shirt">
+                                
+                                <button type="button" class="card-fav-btn" data-id="6" data-name="Ornate Pattern Shirt" data-price="99" data-img="./src/Clothes/2/1.png" data-category="Ornate Shirt" aria-label="Save to Favourites">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                </button>
+                                <button class="quick-add" aria-label="Add Ornate Pattern Shirt to Cart" data-id="6"
+                                    data-name="Ornate Pattern Shirt" data-category="Ornate Shirt" data-price="99"
+                                    data-img="./src/Clothes/2/1.png">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 1V11M1 6H11" stroke="#333333" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-info">
+                                <div class="card-meta">
+                                    <span class="category">Ornate Shirt</span>
+                                    <span class="color-badge"><span class="color-swatch"></span>+2</span>
+                                </div>
+                                <div class="card-main">
+                                    <h3 class="product-name">Ornate Pattern Shirt</h3>
+                                    <span class="price">$99</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="./src/Clothes/3/1.png" alt="Artwork Print T-Shirt">
+                                
+                                <button type="button" class="card-fav-btn" data-id="7" data-name="Artwork Print T-Shirt" data-price="99" data-img="./src/Clothes/3/1.png" data-category="Graphic Tee" aria-label="Save to Favourites">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                </button>
+                                <button class="quick-add" aria-label="Add Artwork Print T-Shirt to Cart" data-id="7"
+                                    data-name="Artwork Print T-Shirt" data-category="Graphic Tee" data-price="99"
+                                    data-img="./src/Clothes/3/1.png">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 1V11M1 6H11" stroke="#333333" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-info">
+                                <div class="card-meta">
+                                    <span class="category">Graphic Tee</span>
+                                    <span class="color-badge"><span class="color-swatch"></span>+3</span>
+                                </div>
+                                <div class="card-main">
+                                    <h3 class="product-name">Artwork Print T-Shirt</h3>
+                                    <span class="price">$99</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="card-img-wrap">
+                                <img src="./src/Clothes/4/1.png" alt="Botanical Motif Shirt">
+                                
+                                <button type="button" class="card-fav-btn" data-id="8" data-name="Botanical Motif Shirt" data-price="99" data-img="./src/Clothes/4/1.png" data-category="Summer Top" aria-label="Save to Favourites">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                </button>
+                                <button class="quick-add" aria-label="Add Botanical Motif Shirt to Cart" data-id="8"
+                                    data-name="Botanical Motif Shirt" data-category="Summer Top" data-price="99"
+                                    data-img="./src/Clothes/4/1.png">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 1V11M1 6H11" stroke="#333333" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-info">
+                                <div class="card-meta">
+                                    <span class="category">Summer Top</span>
+                                    <span class="color-badge"><span class="color-swatch"></span>+2</span>
+                                </div>
+                                <div class="card-main">
+                                    <h3 class="product-name">Botanical Motif Shirt</h3>
+                                    <span class="price">$99</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Navigation Controls -->
+            <div class="section-nav-arrows">
+                <button class="prev" aria-label="Previous products">
+                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 11L1 6L6 1" stroke="#888888" stroke-width="1.2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <button class="next" aria-label="Next products">
+                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 11L6 6L1 1" stroke="#1E1E1E" stroke-width="1.2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= XIV COLLECTIONS 23-24 SECTION ================= -->
+    <section class="xiv-collections" id="collectionsSection">
+        <div class="container">
+            <!-- Header Block -->
+            <div class="xiv-header">
+                <div class="xiv-title-wrap">
+                    <span class="xiv-sub-title">XIV</span>
+                    <h2 class="xiv-main-title">COLLECTIONS</h2>
+                    <span class="xiv-season-tag">23-24</span>
+                </div>
+            </div>
+
+            <!-- Controls & Filter / Sort Bar -->
+            <div class="xiv-controls-bar">
+                <div class="xiv-filter-tabs" role="tablist">
+                    <button class="xiv-tab active" data-filter="ALL" role="tab" aria-selected="true">(ALL)</button>
+                    <button class="xiv-tab" data-filter="Men" role="tab" aria-selected="false">Men</button>
+                    <button class="xiv-tab" data-filter="Women" role="tab" aria-selected="false">Women</button>
+                    <button class="xiv-tab" data-filter="KID" role="tab" aria-selected="false">KID</button>
+                </div>
+
+                <div class="xiv-tools-wrap">
+                    <button class="xiv-tool-btn xiv-filters-trigger" id="xivFiltersTrigger" aria-label="Toggle filters">
+                        <span>Filters(+)</span>
+                    </button>
+                    <div class="xiv-sort-dropdown" id="xivSortDropdown">
+                        <button class="xiv-tool-btn xiv-sort-trigger" id="xivSortTrigger"
+                            aria-label="Toggle sort options">
+                            <span id="xivSortLabel">Sorts(-)</span>
+                        </button>
+                        <div class="xiv-sort-menu" id="xivSortMenu">
+                            <button class="sort-item active" data-sort="default">Featured</button>
+                            <button class="sort-item" data-sort="asc">Less to more</button>
+                            <button class="sort-item" data-sort="desc">More to Less</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Product Grid (Cards with Pure White Background & + Button) -->
+            <div class="xiv-grid" id="xivGrid">
+                <!-- Rendered dynamically from bd.json via JS with fallback cards -->
+            </div>
+
+            <!-- More Button (Navigates to dedicated products page) -->
+            <div class="xiv-more-container">
+                <a href="products.html" class="xiv-more-btn" id="xivMoreBtn" aria-label="Explore Full Products Catalog"
+                    style="text-decoration: none;">
+                    <span class="more-label">More</span>
+                    <span class="more-chevron">
+                        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 2L9 10L17 2" stroke="#111111" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL EDITORIAL CATALOG MODAL (Triggered by More button) -->
+    <div id="catalogModalOverlay" class="catalog-modal-overlay" role="dialog" aria-modal="true"
+        aria-labelledby="catalogModalTitle">
+        <div class="catalog-modal" id="catalogModal">
+            <div class="catalog-modal-header">
+                <div class="catalog-title-group">
+                    <span class="catalog-pretitle">XIV COLLECTIONS 23-24</span>
+                    <h3 id="catalogModalTitle">FULL LOOKBOOK & CATALOG</h3>
+                </div>
+                <div class="catalog-header-actions">
+                    <div class="catalog-filter-pills" id="catalogFilterPills">
+                        <button class="cat-pill active" data-cat="ALL">All Pieces</button>
+                        <button class="cat-pill" data-cat="Men">Men</button>
+                        <button class="cat-pill" data-cat="Women">Women</button>
+                        <button class="cat-pill" data-cat="KID">Kids</button>
+                    </div>
+                    <button class="catalog-close-btn" id="catalogCloseBtn" aria-label="Close Catalog">
+                        <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L17 17M17 1L1 17" stroke="#111111" stroke-width="1.6" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="catalog-modal-body" id="catalogModalGrid">
+                <!-- Populated dynamically with all high-resolution fashion photographs -->
+            </div>
+        </div>
+    </div>
+
+    <section class="dz-lookbook" id="dzLookbook">
+        <div class="container">
+            <div class="dz-header">
+                <h2 class="dz-title">OUR APPROACH TO FASHION DESIGN</h2>
+                <p class="dz-desc">
+                    at elegant vogue , we blend creativity with craftsmanship to create<br>
+                    fashion that transcends trends and stands the test of time each<br>
+                    design is meticulously crafted, ensuring the highest quelity<br>
+                    exqulsite finish
+                </p>
+            </div>
+        </div>
+
+        <!-- Continuous Looped Wave Gallery -->
+        <div class="dz-wave-viewport" id="dzWaveGallery">
+            <div class="dz-wave-track">
+                <!-- Prepended Clones to ensure infinite seamless coverage across ultra-wide monitors -->
+                <!-- Clone 7-pre (High) -->
+                <div class="dz-gallery-item wave-high" aria-hidden="true">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-7.png" alt="Linen Contemporary" loading="lazy">
+                    </div>
+                </div>
+                <!-- Clone 8-pre (Low) -->
+                <div class="dz-gallery-item wave-low" aria-hidden="true">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-8.png" alt="Editorial Seated" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- 8 Distinct Editorial Photos (Alternating Wave High and Wave Low) -->
+                <!-- Item 1 (High) -->
+                <div class="dz-gallery-item wave-high">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-1.jpg" alt="Urban Fashion Coat"
+                            loading="lazy">
+                    </div>
+                </div>
+                <!-- Item 2 (Low) -->
+                <div class="dz-gallery-item wave-low">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-2.jpg"
+                            alt="Street Style Reflections" loading="lazy">
+                    </div>
+                </div>
+                <!-- Item 3 (High) -->
+                <div class="dz-gallery-item wave-high">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-3.jpg"
+                            alt="Minimalist Fashion Seated" loading="lazy">
+                    </div>
+                </div>
+                <!-- Item 4 (Low) -->
+                <div class="dz-gallery-item wave-low">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-4.jpg" alt="Casual Wear Flatlay"
+                            loading="lazy">
+                    </div>
+                </div>
+                <!-- Item 5 (High) -->
+                <div class="dz-gallery-item wave-high">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-5.png" alt="Silk Elegance" loading="lazy">
+                    </div>
+                </div>
+                <!-- Item 6 (Low) -->
+                <div class="dz-gallery-item wave-low">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-6.png" alt="Studio Modernist" loading="lazy">
+                    </div>
+                </div>
+                <!-- Item 7 (High) -->
+                <div class="dz-gallery-item wave-high">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-7.png" alt="Linen Contemporary" loading="lazy">
+                    </div>
+                </div>
+                <!-- Item 8 (Low) -->
+                <div class="dz-gallery-item wave-low">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-8.png" alt="Editorial Seated" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Clones for seamless infinite looping -->
+                <!-- Clone 1 (High) -->
+                <div class="dz-gallery-item wave-high" aria-hidden="true">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-1.jpg" alt="Urban Fashion Coat"
+                            loading="lazy">
+                    </div>
+                </div>
+                <!-- Clone 2 (Low) -->
+                <div class="dz-gallery-item wave-low" aria-hidden="true">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-2.jpg"
+                            alt="Street Style Reflections" loading="lazy">
+                    </div>
+                </div>
+                <!-- Clone 3 (High) -->
+                <div class="dz-gallery-item wave-high" aria-hidden="true">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-3.jpg"
+                            alt="Minimalist Fashion Seated" loading="lazy">
+                    </div>
+                </div>
+                <!-- Clone 4 (Low) -->
+                <div class="dz-gallery-item wave-low" aria-hidden="true">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-4.jpg" alt="Casual Wear Flatlay"
+                            loading="lazy">
+                    </div>
+                </div>
+                <!-- Clone 5 (High) -->
+                <div class="dz-gallery-item wave-high" aria-hidden="true">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-5.png" alt="Silk Elegance" loading="lazy">
+                    </div>
+                </div>
+                <!-- Clone 6 (Low) -->
+                <div class="dz-gallery-item wave-low" aria-hidden="true">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-6.png" alt="Studio Modernist" loading="lazy">
+                    </div>
+                </div>
+                <!-- Clone 7 (High) -->
+                <div class="dz-gallery-item wave-high" aria-hidden="true">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-7.png" alt="Linen Contemporary" loading="lazy">
+                    </div>
+                </div>
+                <!-- Clone 8 (Low) -->
+                <div class="dz-gallery-item wave-low" aria-hidden="true">
+                    <div class="dz-card-inner">
+                        <img src="./src/dz/lookbook-8.png" alt="Editorial Seated" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= HIGH FASHION EDITORIAL FOOTER ================= -->
+    <footer class="xiv-footer" id="xivFooter">
+        <div class="xiv-footer-container">
+            <div class="xiv-footer-main">
+                <!-- Left Navigation Column -->
+                <div class="xiv-footer-nav-col">
+                    <!-- Info Section -->
+                    <div class="xiv-footer-block">
+                        <span class="xiv-footer-heading">INFO</span>
+                        <ul class="xiv-footer-list">
+                            <li><a href="#pricing" class="xiv-footer-link">PRICING <span class="xiv-slash">/</span></a>
+                            </li>
+                            <li><a href="#about" class="xiv-footer-link">ABOUT <span class="xiv-slash">/</span></a></li>
+                            <li><a href="#contacts" class="xiv-footer-link">CONTACTS</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Languages Section -->
+                    <div class="xiv-footer-block xiv-footer-languages">
+                        <span class="xiv-footer-heading">LANGUAGES</span>
+                        <ul class="xiv-footer-list">
+                            <li><button type="button" class="xiv-footer-lang-btn is-active">ENG <span
+                                        class="xiv-slash">/</span></button></li>
+                            <li><button type="button" class="xiv-footer-lang-btn">ESP <span
+                                        class="xiv-slash">/</span></button></li>
+                            <li><button type="button" class="xiv-footer-lang-btn">SVE</button></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Center / Brand Technologies Column -->
+                <div class="xiv-footer-tech-col">
+                    <span class="xiv-footer-heading">TECHNOLOGIES</span>
+
+                    <div class="xiv-footer-tech-content">
+                        <!-- Brand Emblem & Typography Wrapper -->
+                        <div class="xiv-brand-display">
+                            <!-- Background VR Ghost Typography -->
+                            <span class="xiv-watermark-vr" aria-hidden="true">VR</span>
+
+                            <!-- Diamond Prism Icon (left half grey, right half black) -->
+                            <div class="xiv-prism-emblem" aria-hidden="true">
+                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="13,1 1,13 13,25" fill="#cecece" />
+                                    <polygon points="13,1 25,13 13,25" fill="#141414" />
+                                </svg>
+                            </div>
+
+                            <!-- Massive Bold Typography: XIV QR -->
+                            <div class="xiv-brand-title">
+                                <span class="xiv-title-line">XIV</span>
+                                <span class="xiv-title-line">QR</span>
+                            </div>
+                        </div>
+
+                        <!-- Near-Field Communication Descriptor with Slanted Slash -->
+                        <div class="xiv-nfc-descriptor">
+                            <span>Near-field communication</span>
+                            <svg class="xiv-nfc-slash-svg" width="14" height="40" viewBox="0 0 14 40" fill="none"
+                                aria-hidden="true">
+                                <line x1="12" y1="2" x2="2" y2="38" stroke="#b2b2b2" stroke-width="1.3"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Row: Copyright & Legal -->
+            <div class="xiv-footer-bottom">
+                <div class="xiv-footer-bottom-spacer"></div>
+                <div class="xiv-footer-copyright">
+                    &copy; 2024 &mdash; copyright
+                </div>
+                <div class="xiv-footer-privacy-col">
+                    <a href="#privacy" class="xiv-privacy-link">privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- HIGH FASHION EDITORIAL CART DRAWER -->
+    <div id="cartDrawerOverlay" class="cart-drawer-overlay">
+        <div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+            <div class="cart-drawer-header">
+                <div class="cart-title-wrap">
+                    <h3 id="cartTitle">SHOPPING BAG</h3>
+                    <span class="cart-count-badge" id="cartCountBadge">(0)</span>
+                </div>
+                <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close Bag">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L17 17M17 1L1 17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="cart-drawer-body" id="cartItemsList">
+                <!-- Cart items or empty state rendered via JS -->
+            </div>
+
+            <div class="cart-drawer-footer" id="cartFooter">
+                <div class="cart-summary">
+                    <div class="summary-row shipping-row">
+                        <span>Shipping</span>
+                        <span class="free-shipping">Complimentary</span>
+                    </div>
+                    <div class="summary-row subtotal-row">
+                        <span>Subtotal</span>
+                        <span id="cartSubtotal" class="subtotal-val">$0</span>
+                    </div>
+                </div>
+                <button class="cart-checkout-btn" id="checkoutBtn">
+                    <span>CHECKOUT</span>
+                    <span class="btn-arrow">
+                        <svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 6H22M17 1L22 6L17 11" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </button>
+                <button class="cart-continue-btn" id="continueShoppingBtn">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="cartToast" class="cart-toast" role="status" aria-live="polite">
+        <span class="toast-icon">✓</span>
+        <span class="toast-msg">Item added to bag</span>
+    </div>
+
+    <!-- VISA CHECKOUT MODAL -->
+    <div id="checkoutModalOverlay" class="checkout-modal-overlay" role="dialog" aria-modal="true"
+        aria-labelledby="checkoutModalTitle">
+        <div class="checkout-modal" id="checkoutModal">
+            <!-- Modal Close Button -->
+            <button class="modal-close-btn" id="checkoutModalClose" aria-label="Close checkout">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L17 17M17 1L1 17" stroke="#111111" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <!-- STEP 1: CARD FORM VIEW -->
+            <div class="checkout-view" id="checkoutFormView">
+                <div class="checkout-header">
+                    <div class="checkout-badge">SECURE CHECKOUT</div>
+                    <h3 id="checkoutModalTitle">VISA PAYMENT</h3>
+                    <p class="checkout-subtitle">Enter card details to complete your order</p>
+                </div>
+
+                <!-- Interactive Visa Card Preview -->
+                <div class="credit-card-preview" id="cardPreview">
+                    <div class="card-glass-shine"></div>
+                    <div class="card-top-row">
+                        <div class="card-chip">
+                            <div class="chip-line"></div>
+                            <div class="chip-line"></div>
+                            <div class="chip-line"></div>
+                        </div>
+                        <div class="card-brand-logo">
+                            <!-- Visa Logo SVG -->
+                            <svg width="54" height="18" viewBox="0 0 54 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22.5 0.5L14.7 17.5H9.6L5.9 4.2C5.7 3.3 5.5 3.0 4.8 2.6C3.7 2.0 1.7 1.4 0 1.0L0.2 0.5H8.3C9.4 0.5 10.3 1.2 10.6 2.5L12.6 13.5L17.6 0.5H22.5ZM42.7 12.0C42.7 7.7 36.8 7.5 36.8 5.6C36.9 5.0 37.4 4.3 38.7 4.2C39.3 4.1 41.0 4.0 42.8 4.9L43.6 1.4C42.5 1.0 41.2 0.6 39.4 0.6C34.3 0.6 30.6 3.4 30.6 7.4C30.6 10.4 33.2 12.0 35.1 13.0C37.2 14.0 37.9 14.6 37.8 15.5C37.8 16.9 36.2 17.5 34.7 17.5C32.3 17.5 30.8 16.8 29.7 16.3L28.9 19.9C30.2 20.5 32.2 21.0 34.4 21.0C39.9 21.0 43.4 18.2 43.5 14.0L42.7 12.0ZM56.0 17.5H60.3L56.5 0.5H52.6C51.7 0.5 50.9 1.0 50.6 1.9L43.2 17.5H48.4L49.4 14.6H55.7L56.0 17.5ZM50.8 10.7L53.4 3.4L54.9 10.7H50.8ZM29.5 0.5L25.6 17.5H20.7L24.6 0.5H29.5Z"
+                                    transform="scale(0.85)" fill="#FFFFFF" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="card-number-display" id="cardPreviewNumber">•••• •••• •••• ••••</div>
+
+                    <div class="card-bottom-row">
+                        <div class="card-holder-wrap">
+                            <span class="card-lbl">CARD HOLDER</span>
+                            <span class="card-val" id="cardPreviewName">ALEXANDER SMITH</span>
+                        </div>
+                        <div class="card-expiry-wrap">
+                            <span class="card-lbl">EXPIRES</span>
+                            <span class="card-val" id="cardPreviewExpiry">12/28</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form id="checkoutForm" class="checkout-form" autocomplete="off">
+                    <div class="form-group">
+                        <label for="cardNumberInput">Card Number</label>
+                        <div class="input-with-icon">
+                            <input type="text" id="cardNumberInput" name="cardnumber" placeholder="4400 1234 5678 9010"
+                                maxlength="19" inputmode="numeric" required>
+                            <span class="input-card-icon" aria-hidden="true">
+                                <svg width="32" height="20" viewBox="0 0 32 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="32" height="20" rx="3" fill="#0E4595" />
+                                    <path
+                                        d="M13.2 6.2L10.9 14.8H8.8L7.2 8.1C7.1 7.6 6.9 7.4 6.5 7.2C5.8 6.8 4.7 6.5 3.6 6.3L3.7 6.2H7.7C8.2 6.2 8.7 6.6 8.8 7.2L9.8 12.8L12.1 6.2H13.2ZM18.6 12.0C18.6 9.8 15.6 9.7 15.7 8.7C15.7 8.4 16.0 8.1 16.6 8.0C16.9 8.0 17.8 7.9 18.7 8.4L19.1 6.6C18.6 6.4 17.9 6.2 17.0 6.2C14.4 6.2 12.6 7.6 12.6 9.6C12.6 11.1 13.9 11.9 14.9 12.4C15.9 12.9 16.3 13.2 16.3 13.7C16.3 14.4 15.5 14.7 14.7 14.7C13.5 14.7 12.7 14.3 12.2 14.1L11.7 15.9C12.4 16.2 13.4 16.5 14.5 16.5C17.3 16.5 19.1 15.1 19.1 13.0L18.6 12.0ZM25.3 14.8H27.2L25.6 6.2H23.9C23.4 6.2 23.0 6.5 22.9 6.9L19.5 14.8H21.7L22.2 13.5H24.9L25.3 14.8ZM22.8 12.0L23.9 8.8L24.5 12.0H22.8ZM15.9 6.2L13.9 14.8H11.8L13.8 6.2H15.9Z"
+                                        fill="#FFFFFF" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cardNameInput">Cardholder Name</label>
+                        <input type="text" id="cardNameInput" name="cardname" placeholder="ALEXANDER SMITH"
+                            maxlength="28" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-half">
+                            <label for="cardExpiryInput">Expiration Date</label>
+                            <input type="text" id="cardExpiryInput" name="cardexpiry" placeholder="12/28" maxlength="5"
+                                inputmode="numeric" required>
+                        </div>
+                        <div class="form-group col-half">
+                            <label for="cardCvvInput">CVV / CVC</label>
+                            <input type="password" id="cardCvvInput" name="cardcvv" placeholder="•••" maxlength="4"
+                                inputmode="numeric" required>
+                        </div>
+                    </div>
+
+                    <div class="checkout-actions">
+                        <button type="submit" class="pay-submit-btn" id="paySubmitBtn">
+                            <span class="pay-btn-text">PAY</span>
+                            <span class="pay-btn-amount" id="modalPayAmount">$0</span>
+                            <svg class="pay-btn-lock" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- STEP 2: PROCESSING & SUCCESS VIEW -->
+            <div class="checkout-view is-hidden" id="checkoutProcessView">
+                <div class="payment-animation-stage">
+                    <div class="spinner-checkmark-container" id="spinnerCheckmarkContainer">
+                        <!-- SVG Animation Element -->
+                        <svg class="payment-status-svg" viewBox="0 0 100 100" width="110" height="110">
+                            <!-- Background Track -->
+                            <circle class="ring-bg-track" cx="50" cy="50" r="42" fill="none" stroke="#e8e8e8"
+                                stroke-width="6" />
+
+                            <!-- Incomplete Rotating & Chasing Green Ring -->
+                            <circle class="ring-spinner-circle" id="ringSpinnerCircle" cx="50" cy="50" r="42"
+                                fill="none" stroke="#10b981" stroke-width="6" stroke-linecap="round" />
+
+                            <!-- Solid Green Filling Circle -->
+                            <circle class="success-circle-bg" id="successCircleBg" cx="50" cy="50" r="42"
+                                fill="#10b981" />
+
+                            <!-- White Checkmark Path -->
+                            <path class="success-checkmark-path" id="successCheckmarkPath" d="M30 52 L43 65 L70 37"
+                                fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="payment-status-content" id="paymentStatusContent">
+                    <!-- Dynamic state: Processing -->
+                    <div class="status-state-processing" id="statusStateProcessing">
+                        <h4>PROCESSING PAYMENT</h4>
+                        <p>Securing transaction with payment gateway...</p>
+                        <div class="pulse-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic state: Success -->
+                    <div class="status-state-success is-hidden" id="statusStateSuccess">
+                        <div class="success-badge">ORDER CONFIRMED</div>
+                        <h4 class="success-title">PAYMENT SUCCESSFUL</h4>
+                        <p class="success-desc">Thank you for your purchase! Your order has been placed and is being
+                            prepared.</p>
+
+                        <div class="order-receipt-card">
+                            <div class="receipt-row">
+                                <span class="receipt-label">Order Reference</span>
+                                <span class="receipt-value" id="receiptOrderId">#ORD-94821</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">Amount Paid</span>
+                                <span class="receipt-value receipt-amount" id="receiptAmount">$0</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">Payment Method</span>
+                                <span class="receipt-value" id="receiptCard">Visa •••• 4400</span>
+                            </div>
+                        </div>
+
+                        <button class="payment-done-btn" id="paymentDoneBtn">
+                            <span>CONTINUE SHOPPING</span>
+                            <svg width="18" height="12" viewBox="0 0 24 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 6H22M17 1L22 6L17 11" stroke="white" stroke-width="1.8"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./carousel.js"></script>
+    <script src="./favourites-manager.js"></script>
+    <script src="./profile-manager.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

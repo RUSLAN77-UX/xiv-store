@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='17.5' width='24.7487' height='24.7487' transform='rotate(45 17.5 0)' fill='%23D9D9D9'/%3E%3Cpath d='M34.6466 17.5002L17.75 34.3969V0.603527L34.6466 17.5002Z' fill='black' stroke='%23060606' stroke-width='0.5'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product-detail.css">
+    <link rel="stylesheet" href="profile.css">
+    <title>Product Details — XIV STORE</title>
+</head>
+
+<body class="pdp-body">
+    <!-- NAVIGATION BAR -->
+    <nav class="catalog-navbar pdp-navbar">
+        <div class="container">
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Collections</a>
+                <a href="products.html?filter=deals">Deals</a>
+            </div>
+
+            <div class="logo">
+                <a href="index.html" aria-label="Store Home">
+                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="17.5" width="24.7487" height="24.7487" transform="rotate(45 17.5 0)" fill="#D9D9D9" />
+                        <path d="M34.6466 17.5002L17.75 34.3969V0.603527L34.6466 17.5002Z" fill="black" stroke="#060606" stroke-width="0.5" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="buttons">
+                <button class="favorites" id="navFavBtn" aria-label="Wishlist">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.8059 16.6943L12.7597 15.9458L12.8059 16.6943ZM7.33268 6.82443L7.27619 7.5723C7.4795 7.58766 7.68029 7.51958 7.83234 7.38375C7.98439 7.24792 8.07458 7.05605 8.08216 6.8523L7.33268 6.82443ZM16.5254 13.3716L17.264 13.5015L16.5254 13.3716ZM12.7597 15.9458C11.1685 16.0438 9.53441 16.2341 7.93558 16.0486C6.37521 15.8676 4.93302 15.3326 3.75939 14.0189L2.64075 15.0182C4.12626 16.6811 5.95231 17.3286 7.76272 17.5386C9.53468 17.7442 11.3739 17.534 12.852 17.4429L12.7597 15.9458ZM3.75939 14.0189C2.61677 12.7398 2.3858 11.0269 2.96459 9.70578C3.52252 8.43233 4.89677 7.39259 7.27619 7.5723L7.38916 6.07656C4.45773 5.85516 2.43611 7.17414 1.59067 9.10384C0.766087 10.9859 1.12425 13.3206 2.64075 15.0182L3.75939 14.0189ZM12.852 17.4429C13.3848 17.4101 13.9662 17.3726 14.4961 17.265C15.0257 17.1575 15.5862 16.9652 16.0342 16.565L15.0349 15.4464C14.8709 15.5929 14.6086 15.7116 14.1976 15.795C13.7869 15.8784 13.3101 15.9118 12.7597 15.9458L12.852 17.4429ZM17.264 13.5015C17.5206 12.043 17.936 10.239 17.9307 8.45517C17.9254 6.63262 17.4871 4.74539 16.0016 3.08251L14.8829 4.08183C16.0566 5.3956 16.4261 6.88874 16.4307 8.45957C16.4355 10.0691 16.0629 11.6715 15.7867 13.2417L17.264 13.5015ZM16.0016 3.08251C14.4851 1.38493 12.2054 0.766811 10.2426 1.37478C8.23015 1.99813 6.69245 3.85881 6.5832 6.79656L8.08216 6.8523C8.17084 4.46776 9.35835 3.21898 10.6864 2.80762C12.0641 2.38087 13.7403 2.80277 14.8829 4.08183L16.0016 3.08251ZM15.7867 13.2417C15.6912 13.7847 15.6044 14.2548 15.4754 14.6535C15.3464 15.0525 15.199 15.2998 15.0349 15.4464L16.0342 16.565C16.4823 16.1647 16.7363 15.6293 16.9026 15.1152C17.069 14.6007 17.1716 14.0272 17.264 13.5015L15.7867 13.2417Z"
+                            fill="white" />
+                    </svg>
+                </button>
+
+                <button class="cart" id="navCartBtn" aria-label="Open Cart">
+                    <span class="cart-btn-text">Cart <b id="navCartCount" class="cart-nav-badge">0</b></span>
+                    <span class="cart-btn-icon">
+                        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="18.5185" cy="18.5185" r="18.5185" fill="white" />
+                            <path
+                                d="M12.4348 24.3441C13.367 25.5185 15.1019 25.5185 18.5717 25.5185H19.1321C22.602 25.5185 24.3369 25.5185 25.2691 24.3441M12.4348 24.3441C11.5026 23.1697 11.8224 21.3867 12.4618 17.8206C12.9166 15.2847 13.1439 14.0167 14.0072 13.2676M25.2691 24.3441C26.2012 23.1697 25.8815 21.3867 25.242 17.8206C24.7873 15.2847 24.5599 14.0167 23.6967 13.2676M23.6967 13.2676C22.8335 12.5185 21.5997 12.5185 19.1321 12.5185H18.5717C16.1042 12.5185 14.8704 12.5185 14.0072 13.2676"
+                                stroke="black" stroke-width="1.5" />
+                            <path
+                                d="M16.8519 15.5185C17.1431 16.6837 17.9286 17.5185 18.8519 17.5185C19.7753 17.5185 20.5608 16.6837 20.8519 15.5185"
+                                stroke="black" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </span>
+                </button>
+                <button class="profile" id="navProfileBtn" aria-label="User Profile">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
+                        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21.6h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" fill="#ffffff"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div id="mobileNavOverlay" class="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Site Navigation">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer">
+            <div class="mobile-nav-header">
+                <span class="mobile-nav-brand">XIV COLLECTIONS</span>
+                <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Menu">
+                    <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L17 17M17 1L1 17" stroke="#111111" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-nav-body">
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    <li><a href="products.html" class="mobile-nav-link">All Products</a></li>
+                    <li><a href="index.html#collectionsSection" class="mobile-nav-link">XIV Collections 23-24</a></li>
+                    <li><a href="index.html#newThisWeekSection" class="mobile-nav-link">New This Week</a></li>
+                    <li><a href="index.html#dzLookbook" class="mobile-nav-link">Lookbook</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN PRODUCT DETAILS SECTION -->
+    <main class="pdp-main-wrap">
+        <div class="pdp-container">
+            
+            <!-- Breadcrumbs -->
+            <div class="pdp-breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="sep">/</span>
+                <a href="products.html">Collections</a>
+                <span class="sep">/</span>
+                <span class="active" id="pdpBreadcrumbTitle">Garment</span>
+            </div>
+
+            <!-- PDP 3-Zone Showcase Layout -->
+            <div class="pdp-showcase" id="pdpShowcase">
+                
+                <!-- ZONE 1: Large Main Photo View -->
+                <div class="pdp-main-media-box">
+                    <div class="pdp-hero-image-wrap" id="heroImageWrap">
+                        <img src="./src/Clothes/8/1.png" alt="Product Hero View" id="pdpHeroImage" class="pdp-hero-img" />
+                        <div class="pdp-zoom-indicator" aria-hidden="true">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                <line x1="11" y1="8" x2="11" y2="14"></line>
+                                <line x1="8" y1="11" x2="14" y2="11"></line>
+                            </svg>
+                            <span>ROLL OVER TO ZOOM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ZONE 2: Vertical Thumbnails Rail (5 Angles) -->
+                <div class="pdp-thumbs-rail" id="pdpThumbsRail">
+                    <!-- Populated dynamically via pdp.js -->
+                </div>
+
+                <!-- ZONE 3: Editorial Purchase Panel -->
+                <div class="pdp-purchase-card">
+                    <!-- Wishlist / Tag Action -->
+                    <button type="button" class="pdp-card-tag-btn" id="pdpWishlistBtn" aria-label="Save to Wishlist">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Product Title -->
+                    <h1 class="pdp-title" id="pdpTitle">ABSTRACT PRINT SHIRT</h1>
+
+                    <!-- Price & Tax Note -->
+                    <div class="pdp-price" id="pdpPrice">$99</div>
+                    <div class="pdp-tax-note">MRP incl. of all taxes</div>
+
+                    <!-- Editorial Description -->
+                    <p class="pdp-description" id="pdpDescription">
+                        Relaxed-fit shirt. Camp collar and short sleeves. Button-up front.
+                    </p>
+
+                    <!-- Color Swatches -->
+                    <div class="pdp-option-group">
+                        <span class="pdp-option-label">Color</span>
+                        <div class="pdp-colors-row" id="pdpColorsRow">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Size Buttons -->
+                    <div class="pdp-option-group">
+                        <span class="pdp-option-label">Size</span>
+                        <div class="pdp-sizes-row" id="pdpSizesRow">
+                            <!-- Populated dynamically -->
+                        </div>
+                        
+                        <!-- Size Guide Modal Trigger -->
+                        <div class="pdp-guide-link-wrap">
+                            <button type="button" class="pdp-guide-link" id="pdpSizeGuideTrigger">
+                                FIND YOUR SIZE | MEASUREMENT GUIDE
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Main ADD Button -->
+                    <button type="button" class="pdp-add-btn" id="pdpAddBtn">
+                        <span class="btn-text">ADD</span>
+                    </button>
+
+                    <!-- Availability indicator -->
+                    <div class="pdp-stock-status" id="pdpStockStatus">
+                        <span class="stock-dot"></span>
+                        <span class="stock-text">In stock & ready to ship</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- SIZE GUIDE & MEASUREMENT MODAL -->
+    <div id="sizeGuideModal" class="size-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="sizeGuideTitle">
+        <div class="size-modal">
+            <button type="button" class="size-modal-close" id="sizeGuideClose" aria-label="Close size guide">&times;</button>
+            <div class="size-modal-header">
+                <span class="pre-heading">XIV EDITORIAL TAILORING</span>
+                <h3 id="sizeGuideTitle">MEASUREMENT GUIDE & SIZING</h3>
+            </div>
+            <div class="size-modal-body">
+                <table class="size-chart-table">
+                    <thead>
+                        <tr>
+                            <th>Size</th>
+                            <th>Chest (in)</th>
+                            <th>Waist (in)</th>
+                            <th>Length (in)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>XS</td><td>36 - 38</td><td>28 - 30</td><td>27.5</td></tr>
+                        <tr><td>S</td><td>38 - 40</td><td>30 - 32</td><td>28.0</td></tr>
+                        <tr><td>M</td><td>40 - 42</td><td>32 - 34</td><td>28.5</td></tr>
+                        <tr><td>L</td><td>42 - 44</td><td>34 - 36</td><td>29.0</td></tr>
+                        <tr><td>XL</td><td>44 - 46</td><td>36 - 38</td><td>29.5</td></tr>
+                        <tr><td>2X</td><td>46 - 48</td><td>38 - 40</td><td>30.0</td></tr>
+                    </tbody>
+                </table>
+                <div class="measure-tip">
+                    <strong>How to measure:</strong> Measure around the fullest part of your chest, keeping the tape horizontal. For waist, measure around your natural waistline.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HIGH FASHION EDITORIAL FOOTER -->
+    <footer class="xiv-footer" id="xivFooter">
+        <div class="xiv-footer-container">
+            <div class="xiv-footer-main">
+                <div class="xiv-footer-nav-col">
+                    <div class="xiv-footer-block">
+                        <span class="xiv-footer-heading">INFO</span>
+                        <ul class="xiv-footer-list">
+                            <li><a href="index.html#pricing" class="xiv-footer-link">PRICING <span class="xiv-slash">/</span></a></li>
+                            <li><a href="index.html#about" class="xiv-footer-link">ABOUT <span class="xiv-slash">/</span></a></li>
+                            <li><a href="index.html#contacts" class="xiv-footer-link">CONTACTS</a></li>
+                        </ul>
+                    </div>
+                    <div class="xiv-footer-block xiv-footer-languages">
+                        <span class="xiv-footer-heading">LANGUAGES</span>
+                        <ul class="xiv-footer-list">
+                            <li><button type="button" class="xiv-footer-lang-btn is-active">ENG <span class="xiv-slash">/</span></button></li>
+                            <li><button type="button" class="xiv-footer-lang-btn">ESP <span class="xiv-slash">/</span></button></li>
+                            <li><button type="button" class="xiv-footer-lang-btn">SVE</button></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="xiv-footer-tech-col">
+                    <span class="xiv-footer-heading">TECHNOLOGIES</span>
+                    <div class="xiv-footer-tech-content">
+                        <div class="xiv-brand-display">
+                            <span class="xiv-watermark-vr" aria-hidden="true">VR</span>
+                            <div class="xiv-prism-emblem" aria-hidden="true">
+                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="13,1 1,13 13,25" fill="#cecece" />
+                                    <polygon points="13,1 25,13 13,25" fill="#141414" />
+                                </svg>
+                            </div>
+                            <div class="xiv-brand-title">
+                                <span class="xiv-title-line">XIV</span>
+                                <span class="xiv-title-line">QR</span>
+                            </div>
+                        </div>
+                        <div class="xiv-nfc-descriptor">
+                            <span>Near-field communication</span>
+                            <svg class="xiv-nfc-slash-svg" width="14" height="40" viewBox="0 0 14 40" fill="none" aria-hidden="true">
+                                <line x1="12" y1="2" x2="2" y2="38" stroke="#b2b2b2" stroke-width="1.3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="xiv-footer-bottom">
+                <div class="xiv-footer-bottom-spacer"></div>
+                <div class="xiv-footer-copyright">&copy; 2024 &mdash; copyright</div>
+                <div class="xiv-footer-privacy-col">
+                    <a href="#privacy" class="xiv-privacy-link">privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- HIGH FASHION EDITORIAL CART DRAWER -->
+    <div id="cartDrawerOverlay" class="cart-drawer-overlay">
+        <div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+            <div class="cart-drawer-header">
+                <div class="cart-title-wrap">
+                    <h3 id="cartTitle">SHOPPING BAG</h3>
+                    <span class="cart-count-badge" id="cartCountBadge">(0)</span>
+                </div>
+                <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close Bag">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L17 17M17 1L1 17" stroke="#111111" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="cart-drawer-body" id="cartItemsList"></div>
+
+            <div class="cart-drawer-footer" id="cartFooter">
+                <div class="cart-summary">
+                    <div class="summary-row shipping-row">
+                        <span>Shipping</span>
+                        <span class="free-shipping">Complimentary</span>
+                    </div>
+                    <div class="summary-row subtotal-row">
+                        <span>Subtotal</span>
+                        <span id="cartSubtotal" class="subtotal-val">$0</span>
+                    </div>
+                </div>
+                <button class="cart-checkout-btn" id="checkoutBtn">
+                    <span>CHECKOUT</span>
+                    <span class="btn-arrow">
+                        <svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 6H22M17 1L22 6L17 11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </button>
+                <button class="cart-continue-btn" id="continueShoppingBtn">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="cartToast" class="cart-toast" role="status" aria-live="polite">
+        <span class="toast-icon">✓</span>
+        <span class="toast-msg">Item added to bag</span>
+    </div>
+
+    <!-- VISA CHECKOUT MODAL -->
+    <div id="checkoutModalOverlay" class="checkout-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle">
+        <div class="checkout-modal" id="checkoutModal">
+            <button class="modal-close-btn" id="checkoutModalClose" aria-label="Close checkout">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L17 17M17 1L1 17" stroke="#111111" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+
+            <!-- CARD FORM VIEW -->
+            <div class="checkout-view" id="checkoutFormView">
+                <div class="checkout-header">
+                    <div class="checkout-badge">SECURE CHECKOUT</div>
+                    <h3 id="checkoutModalTitle">VISA PAYMENT</h3>
+                    <p class="checkout-subtitle">Enter card details to complete your order</p>
+                </div>
+
+                <div class="credit-card-preview" id="cardPreview">
+                    <div class="card-glass-shine"></div>
+                    <div class="card-top-row">
+                        <div class="card-chip">
+                            <div class="chip-line"></div>
+                            <div class="chip-line"></div>
+                            <div class="chip-line"></div>
+                        </div>
+                        <div class="card-brand-logo">
+                            <svg width="54" height="18" viewBox="0 0 54 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.5 0.5L14.7 17.5H9.6L5.9 4.2C5.7 3.3 5.5 3.0 4.8 2.6C3.7 2.0 1.7 1.4 0 1.0L0.2 0.5H8.3C9.4 0.5 10.3 1.2 10.6 2.5L12.6 13.5L17.6 0.5H22.5ZM42.7 12.0C42.7 7.7 36.8 7.5 36.8 5.6C36.9 5.0 37.4 4.3 38.7 4.2C39.3 4.1 41.0 4.0 42.8 4.9L43.6 1.4C42.5 1.0 41.2 0.6 39.4 0.6C34.3 0.6 30.6 3.4 30.6 7.4C30.6 10.4 33.2 12.0 35.1 13.0C37.2 14.0 37.9 14.6 37.8 15.5C37.8 16.9 36.2 17.5 34.7 17.5C32.3 17.5 30.8 16.8 29.7 16.3L28.9 19.9C30.2 20.5 32.2 21.0 34.4 21.0C39.9 21.0 43.4 18.2 43.5 14.0L42.7 12.0ZM56.0 17.5H60.3L56.5 0.5H52.6C51.7 0.5 50.9 1.0 50.6 1.9L43.2 17.5H48.4L49.4 14.6H55.7L56.0 17.5ZM50.8 10.7L53.4 3.4L54.9 10.7H50.8ZM29.5 0.5L25.6 17.5H20.7L24.6 0.5H29.5Z" transform="scale(0.85)" fill="#FFFFFF"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="card-number-display" id="cardPreviewNumber">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;</div>
+
+                    <div class="card-bottom-row">
+                        <div class="card-holder-wrap">
+                            <span class="card-lbl">CARD HOLDER</span>
+                            <span class="card-val" id="cardPreviewName">ALEXANDER SMITH</span>
+                        </div>
+                        <div class="card-expiry-wrap">
+                            <span class="card-lbl">EXPIRES</span>
+                            <span class="card-val" id="cardPreviewExpiry">12/28</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="checkout-form" id="paymentForm" novalidate>
+                    <div class="form-group">
+                        <label for="cardNumber">CARD NUMBER</label>
+                        <div class="input-with-icon">
+                            <input type="text" id="cardNumber" inputmode="numeric" placeholder="4000 1234 5678 9010" maxlength="19" required />
+                            <span class="input-icon-card"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cardHolder">CARDHOLDER NAME</label>
+                        <input type="text" id="cardHolder" placeholder="Alexander Smith" autocomplete="cc-name" required />
+                    </div>
+
+                    <div class="form-row-split">
+                        <div class="form-group">
+                            <label for="cardExpiry">EXPIRY DATE</label>
+                            <input type="text" id="cardExpiry" inputmode="numeric" placeholder="MM/YY" maxlength="5" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="cardCvv">CVV</label>
+                            <input type="password" id="cardCvv" inputmode="numeric" placeholder="•••" maxlength="4" required />
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-order-btn" id="submitOrderBtn">
+                        <span class="btn-text">AUTHORIZE PAYMENT</span>
+                        <span class="btn-spinner" style="display:none;"></span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- SUCCESS VIEW -->
+            <div class="checkout-view success-view" id="checkoutSuccessView" style="display:none;">
+                <div class="success-checkmark">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="23" stroke="#111111" stroke-width="2"/>
+                        <path d="M14 24L21 31L34 17" stroke="#111111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>PAYMENT AUTHORIZED</h3>
+                <p>Thank you for choosing XIV COLLECTIONS. Your high-fashion pieces are being prepared for dispatch.</p>
+                <div class="order-id-badge" id="orderConfirmationId">#XIV-92841</div>
+                <button type="button" class="success-return-btn" id="successReturnBtn">Back to Catalog</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="favourites-manager.js"></script>
+    <script src="profile-manager.js"></script>
+    <script src="product-detail.js"></script>
+</body>
+
+</html>

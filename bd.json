@@ -1,0 +1,856 @@
+[
+  {
+    "id": 1,
+    "category": "Shirts",
+    "subcategory": "V-Neck T-Shirt",
+    "name": "Embroidered Seersucker Shirt",
+    "price": 149,
+    "colorCount": 3,
+    "img": [
+      "./src/Clothes/7/1.png",
+      "./src/Clothes/7/2.png",
+      "./src/Clothes/7/3.png",
+      "./src/Clothes/7/4.png",
+      "./src/Clothes/7/5.png"
+    ],
+    "description": "Relaxed-fit embroidered seersucker shirt in earthy tones.",
+    "colors": [
+      "#A19F8D",
+      "#1E1E1E",
+      "#D4D3CD"
+    ],
+    "colorNames": [
+      "Olive",
+      "Black",
+      "Beige"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2X"
+    ],
+    "gender": "Men",
+    "inStock": true,
+    "stockCount": 24,
+    "rating": 4.9,
+    "collection": "XIV 23-24",
+    "tags": [
+      "new",
+      "relaxed-fit",
+      "cotton"
+    ]
+  },
+  {
+    "id": 2,
+    "category": "T-Shirts",
+    "subcategory": "Cotton T-Shirt",
+    "name": "Basic Slim Fit T-Shirt",
+    "price": 199,
+    "colorCount": 5,
+    "img": [
+      "./src/Clothes/8/1.png",
+      "./src/Clothes/8/2.png",
+      "./src/Clothes/8/3.png",
+      "./src/Clothes/8/4.png",
+      "./src/Clothes/8/5.png"
+    ],
+    "description": "Premium Egyptian cotton slim-fit minimalist tee.",
+    "colors": [
+      "#FFFFFF",
+      "#D9D9D9",
+      "#1E1E1E",
+      "#A6D6CA",
+      "#B9C1E8"
+    ],
+    "colorNames": [
+      "White",
+      "Grey",
+      "Black",
+      "Sage",
+      "Lavender"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2X"
+    ],
+    "gender": "Men",
+    "inStock": true,
+    "stockCount": 42,
+    "rating": 5.0,
+    "collection": "XIV 23-24",
+    "tags": [
+      "best-seller",
+      "minimalist",
+      "cotton"
+    ]
+  },
+  {
+    "id": 3,
+    "category": "T-Shirts",
+    "subcategory": "Henley T-Shirt",
+    "name": "Blurred Print T-Shirt",
+    "price": 169,
+    "colorCount": 3,
+    "img": [
+      "./src/Clothes/9/1.png",
+      "./src/Clothes/9/2.png",
+      "./src/Clothes/9/3.png",
+      "./src/Clothes/9/4.png",
+      "./src/Clothes/9/5.png"
+    ],
+    "description": "Boxy fit heavy cotton t-shirt with blurred botanical print.",
+    "colors": [
+      "#D4D3CD",
+      "#1E1E1E",
+      "#A19F8D"
+    ],
+    "colorNames": [
+      "Beige",
+      "Black",
+      "Olive"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "gender": "Men",
+    "inStock": true,
+    "stockCount": 18,
+    "rating": 4.8,
+    "collection": "XIV 23-24",
+    "tags": [
+      "new",
+      "cotton"
+    ]
+  },
+  {
+    "id": 4,
+    "category": "T-Shirts",
+    "subcategory": "Crewneck T-Shirt",
+    "name": "Full Sleeve Zipper",
+    "price": 199,
+    "colorCount": 2,
+    "img": [
+      "./src/Clothes/10/1.png",
+      "./src/Clothes/10/2.png",
+      "./src/Clothes/10/3.png",
+      "./src/Clothes/10/4.png",
+      "./src/Clothes/10/5.png"
+    ],
+    "description": "Graphic grid print crewneck shirt with technical side zipper.",
+    "colors": [
+      "#FFFFFF",
+      "#1E1E1E"
+    ],
+    "colorNames": [
+      "White",
+      "Black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2X"
+    ],
+    "gender": "Men",
+    "inStock": true,
+    "stockCount": 31,
+    "rating": 4.7,
+    "collection": "XIV 23-24",
+    "tags": [
+      "best-seller",
+      "minimalist"
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Shirts",
+    "subcategory": "Casual Shirt",
+    "name": "Floral Print Shirt",
+    "price": 189,
+    "colorCount": 4,
+    "img": [
+      "./src/Clothes/1/1.png",
+      "./src/Clothes/1/2.png",
+      "./src/Clothes/1/3.png",
+      "./src/Clothes/1/4.jpg",
+      "./src/Clothes/1/5.png"
+    ],
+    "description": "Button-up shirt with spread collar and floral editorial pattern.",
+    "colors": [
+      "#D9D9D9",
+      "#1E1E1E",
+      "#A6D6CA",
+      "#FFFFFF"
+    ],
+    "colorNames": [
+      "Grey",
+      "Black",
+      "Sage",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2X"
+    ],
+    "gender": "Men",
+    "inStock": true,
+    "stockCount": 15,
+    "rating": 4.9,
+    "collection": "Summer 2024",
+    "tags": [
+      "new",
+      "relaxed-fit"
+    ]
+  },
+  {
+    "id": 6,
+    "category": "Shirts",
+    "subcategory": "Ornate Shirt",
+    "name": "Ornate Pattern Shirt",
+    "price": 219,
+    "colorCount": 2,
+    "img": [
+      "./src/Clothes/2/1.png",
+      "./src/Clothes/2/2.png",
+      "./src/Clothes/2/3.png",
+      "./src/Clothes/2/4.jpg",
+      "./src/Clothes/2/5.png"
+    ],
+    "description": "Shirt with intricate monochrome ornate pattern and dropped shoulders.",
+    "colors": [
+      "#D9D9D9",
+      "#1E1E1E"
+    ],
+    "colorNames": [
+      "Grey",
+      "Black"
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "gender": "Men",
+    "inStock": false,
+    "stockCount": 0,
+    "rating": 4.6,
+    "collection": "XIV 23-24",
+    "tags": [
+      "limited-edition"
+    ]
+  },
+  {
+    "id": 7,
+    "category": "T-Shirts",
+    "subcategory": "Graphic Tee",
+    "name": "Artwork Print T-Shirt",
+    "price": 129,
+    "colorCount": 3,
+    "img": [
+      "./src/Clothes/3/1.png",
+      "./src/Clothes/3/2.png",
+      "./src/Clothes/3/3.png",
+      "./src/Clothes/3/4.jpg",
+      "./src/Clothes/3/5.png"
+    ],
+    "description": "Heavyweight artistic print crewneck in organic cotton.",
+    "colors": [
+      "#D9D9D9",
+      "#1E1E1E",
+      "#FFFFFF"
+    ],
+    "colorNames": [
+      "Grey",
+      "Black",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2X"
+    ],
+    "gender": "Men",
+    "inStock": true,
+    "stockCount": 27,
+    "rating": 4.8,
+    "collection": "Essentials",
+    "tags": [
+      "cotton",
+      "relaxed-fit"
+    ]
+  },
+  {
+    "id": 8,
+    "category": "Polo Shirts",
+    "subcategory": "Summer Top",
+    "name": "Botanical Motif Shirt",
+    "price": 139,
+    "colorCount": 2,
+    "img": [
+      "./src/Clothes/4/1.png",
+      "./src/Clothes/4/2.png",
+      "./src/Clothes/4/3.png",
+      "./src/Clothes/4/4.jpg",
+      "./src/Clothes/4/5.png"
+    ],
+    "description": "Botanical motif summer polo-cut shirt with relaxed cuban collar.",
+    "colors": [
+      "#D9D9D9",
+      "#FFFFFF"
+    ],
+    "colorNames": [
+      "Grey",
+      "White"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "gender": "Men",
+    "inStock": true,
+    "stockCount": 19,
+    "rating": 4.7,
+    "collection": "Summer 2024",
+    "tags": [
+      "summer",
+      "relaxed-fit"
+    ]
+  },
+  {
+    "id": 9,
+    "category": "Shirts",
+    "subcategory": "Silk Blouse",
+    "name": "Minimalist Pure Silk Blouse",
+    "price": 249,
+    "colorCount": 3,
+    "img": [
+      "./src/Clothes/Women/1/1.png",
+      "./src/Clothes/Women/1/2.png",
+      "./src/Clothes/Women/1/3.png",
+      "./src/Clothes/Women/1/4.png",
+      "./src/Clothes/Women/1/5.png"
+    ],
+    "description": "Flowing relaxed-fit 100% mulberry silk blouse with concealed placket.",
+    "colors": [
+      "#F4F1EA",
+      "#1E1E1E",
+      "#D9B99B"
+    ],
+    "colorNames": [
+      "Beige",
+      "Black",
+      "Brown"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "gender": "Women",
+    "inStock": true,
+    "stockCount": 22,
+    "rating": 5.0,
+    "collection": "XIV 23-24",
+    "tags": [
+      "new",
+      "best-seller",
+      "silk",
+      "minimalist"
+    ]
+  },
+  {
+    "id": 10,
+    "category": "Shirts",
+    "subcategory": "Linen Top",
+    "name": "Oversized Linen Resort Shirt",
+    "price": 179,
+    "colorCount": 4,
+    "img": [
+      "./src/Clothes/Women/2/1.png",
+      "./src/Clothes/Women/2/2.png",
+      "./src/Clothes/Women/2/3.png",
+      "./src/Clothes/Women/2/4.png",
+      "./src/Clothes/Women/2/5.png"
+    ],
+    "description": "Breathable French linen shirt with dropped shoulders and pearl buttons.",
+    "colors": [
+      "#FFFFFF",
+      "#D4D3CD",
+      "#8E9A86",
+      "#1E1E1E"
+    ],
+    "colorNames": [
+      "White",
+      "Beige",
+      "Olive",
+      "Black"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2X"
+    ],
+    "gender": "Women",
+    "inStock": true,
+    "stockCount": 35,
+    "rating": 4.9,
+    "collection": "Summer 2024",
+    "tags": [
+      "new",
+      "linen",
+      "relaxed-fit"
+    ]
+  },
+  {
+    "id": 11,
+    "category": "Coats",
+    "subcategory": "Cashmere Knit",
+    "name": "Relaxed Fine Cashmere Sweater",
+    "price": 289,
+    "colorCount": 3,
+    "img": [
+      "./src/Clothes/Women/3/1.png",
+      "./src/Clothes/Women/3/2.png",
+      "./src/Clothes/Women/3/3.png",
+      "./src/Clothes/Women/3/4.png",
+      "./src/Clothes/Women/3/5.png"
+    ],
+    "description": "Ultra-soft featherweight Mongolian cashmere crewneck pullover.",
+    "colors": [
+      "#C8BCA9",
+      "#EAE6DF",
+      "#222222"
+    ],
+    "colorNames": [
+      "Beige",
+      "White",
+      "Black"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "gender": "Women",
+    "inStock": true,
+    "stockCount": 16,
+    "rating": 5.0,
+    "collection": "XIV 23-24",
+    "tags": [
+      "best-seller",
+      "minimalist"
+    ]
+  },
+  {
+    "id": 12,
+    "category": "Shirts",
+    "subcategory": "Poplin Shirt",
+    "name": "Structured Cotton Poplin Shirt",
+    "price": 199,
+    "colorCount": 2,
+    "img": [
+      "./src/Clothes/Women/4/1.png",
+      "./src/Clothes/Women/4/2.png",
+      "./src/Clothes/Women/4/3.png",
+      "./src/Clothes/Women/4/4.png",
+      "./src/Clothes/Women/4/5.png"
+    ],
+    "description": "Crisp architectural organic poplin shirt with elongated cuffs.",
+    "colors": [
+      "#FFFFFF",
+      "#A9B7C6"
+    ],
+    "colorNames": [
+      "White",
+      "Blue"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2X"
+    ],
+    "gender": "Women",
+    "inStock": true,
+    "stockCount": 29,
+    "rating": 4.8,
+    "collection": "XIV 23-24",
+    "tags": [
+      "new",
+      "cotton"
+    ]
+  },
+  {
+    "id": 13,
+    "category": "Suits",
+    "subcategory": "Tailored Blazer",
+    "name": "Single-Breasted Wool Blazer",
+    "price": 299,
+    "colorCount": 3,
+    "img": [
+      "./src/Clothes/Women/5/1.png",
+      "./src/Clothes/Women/5/2.png",
+      "./src/Clothes/Women/5/3.png",
+      "./src/Clothes/Women/5/4.png",
+      "./src/Clothes/Women/5/5.png"
+    ],
+    "description": "Modern minimalist tailored suit blazer with fluid drape and clean lapels.",
+    "colors": [
+      "#2B2B2B",
+      "#C2B8A3",
+      "#5A5856"
+    ],
+    "colorNames": [
+      "Black",
+      "Beige",
+      "Grey"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "gender": "Women",
+    "inStock": true,
+    "stockCount": 14,
+    "rating": 5.0,
+    "collection": "XIV 23-24",
+    "tags": [
+      "best-seller",
+      "suits",
+      "minimalist"
+    ]
+  },
+  {
+    "id": 14,
+    "category": "Shorts",
+    "subcategory": "Ribbed Tank",
+    "name": "Seamless Ribbed Knit Top",
+    "price": 119,
+    "colorCount": 5,
+    "img": [
+      "./src/Clothes/Women/6/1.png",
+      "./src/Clothes/Women/6/2.png",
+      "./src/Clothes/Women/6/3.png",
+      "./src/Clothes/Women/6/4.png",
+      "./src/Clothes/Women/6/5.png"
+    ],
+    "description": "Fine-gauge organic cotton ribbed tank top with flattering square neckline.",
+    "colors": [
+      "#FFFFFF",
+      "#E3DAC9",
+      "#1E1E1E",
+      "#9FB1A3",
+      "#D8C3B5"
+    ],
+    "colorNames": [
+      "White",
+      "Beige",
+      "Black",
+      "Sage",
+      "Brown"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2X"
+    ],
+    "gender": "Women",
+    "inStock": true,
+    "stockCount": 48,
+    "rating": 4.9,
+    "collection": "Essentials",
+    "tags": [
+      "cotton",
+      "minimalist"
+    ]
+  },
+  {
+    "id": 15,
+    "category": "Jackets",
+    "subcategory": "Organic Sweatshirt",
+    "name": "Minimalist Cozy Fleece Crewneck",
+    "price": 109,
+    "colorCount": 4,
+    "img": [
+      "./src/Clothes/Kid/1/1.png",
+      "./src/Clothes/Kid/1/2.png",
+      "./src/Clothes/Kid/1/3.png",
+      "./src/Clothes/Kid/1/4.png",
+      "./src/Clothes/Kid/1/5.png"
+    ],
+    "description": "Super-soft brushed organic cotton crewneck sweatshirt with ribbed trims.",
+    "colors": [
+      "#E5E0D8",
+      "#8B9B88",
+      "#D4AF87",
+      "#2C3539"
+    ],
+    "colorNames": [
+      "Beige",
+      "Olive",
+      "Brown",
+      "Black"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "gender": "KID",
+    "inStock": true,
+    "stockCount": 26,
+    "rating": 4.8,
+    "collection": "Essentials",
+    "tags": [
+      "organic",
+      "cotton"
+    ]
+  },
+  {
+    "id": 16,
+    "category": "Jackets",
+    "subcategory": "Denim Jacket",
+    "name": "Kids Vintage Chore Jacket",
+    "price": 149,
+    "colorCount": 2,
+    "img": [
+      "./src/Clothes/Kid/2/1.png",
+      "./src/Clothes/Kid/2/2.png",
+      "./src/Clothes/Kid/2/3.png",
+      "./src/Clothes/Kid/2/4.png",
+      "./src/Clothes/Kid/2/5.png"
+    ],
+    "description": "Durable stone-washed organic denim workwear jacket with patch pockets.",
+    "colors": [
+      "#5B7C99",
+      "#E0DACB"
+    ],
+    "colorNames": [
+      "Blue",
+      "Beige"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "gender": "KID",
+    "inStock": true,
+    "stockCount": 17,
+    "rating": 4.9,
+    "collection": "XIV 23-24",
+    "tags": [
+      "new",
+      "jackets"
+    ]
+  },
+  {
+    "id": 17,
+    "category": "T-Shirts",
+    "subcategory": "Striped Tee",
+    "name": "Relaxed Breton Striped T-Shirt",
+    "price": 89,
+    "colorCount": 3,
+    "img": [
+      "./src/Clothes/Kid/3/1.png",
+      "./src/Clothes/Kid/3/2.png",
+      "./src/Clothes/Kid/3/3.png",
+      "./src/Clothes/Kid/3/4.png",
+      "./src/Clothes/Kid/3/5.png"
+    ],
+    "description": "Heavyweight organic jersey t-shirt with classic yarn-dyed nautical stripes.",
+    "colors": [
+      "#1B263B",
+      "#8F3838",
+      "#2D5A27"
+    ],
+    "colorNames": [
+      "Navy",
+      "Burgundy",
+      "Green"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2X"
+    ],
+    "gender": "KID",
+    "inStock": false,
+    "stockCount": 0,
+    "rating": 4.7,
+    "collection": "Essentials",
+    "tags": [
+      "cotton"
+    ]
+  },
+  {
+    "id": 18,
+    "category": "Coats",
+    "subcategory": "Knit Cardigan",
+    "name": "Chunky Cotton Button Cardigan",
+    "price": 129,
+    "colorCount": 3,
+    "img": [
+      "./src/Clothes/Kid/4/1.png",
+      "./src/Clothes/Kid/4/2.png",
+      "./src/Clothes/Kid/4/3.png",
+      "./src/Clothes/Kid/4/4.png",
+      "./src/Clothes/Kid/4/5.png"
+    ],
+    "description": "Textured garter-stitch knit cardigan with natural wooden buttons.",
+    "colors": [
+      "#DFD7C7",
+      "#A3B19B",
+      "#C99E82"
+    ],
+    "colorNames": [
+      "Beige",
+      "Sage",
+      "Brown"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "gender": "KID",
+    "inStock": true,
+    "stockCount": 21,
+    "rating": 4.8,
+    "collection": "Essentials",
+    "tags": [
+      "cotton",
+      "best-seller"
+    ]
+  },
+  {
+    "id": 19,
+    "category": "Shirts",
+    "subcategory": "Linen Shirt",
+    "name": "Grandad Collar Linen Shirt",
+    "price": 99,
+    "colorCount": 3,
+    "img": [
+      "./src/Clothes/Kid/5/1.png",
+      "./src/Clothes/Kid/5/2.png",
+      "./src/Clothes/Kid/5/3.png",
+      "./src/Clothes/Kid/5/4.png",
+      "./src/Clothes/Kid/5/5.png"
+    ],
+    "description": "Airy garment-washed linen shirt with band collar for warm summer days.",
+    "colors": [
+      "#FFFFFF",
+      "#C5D0D9",
+      "#E8DEC8"
+    ],
+    "colorNames": [
+      "White",
+      "Blue",
+      "Beige"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "gender": "KID",
+    "inStock": true,
+    "stockCount": 30,
+    "rating": 4.6,
+    "collection": "Summer 2024",
+    "tags": [
+      "linen",
+      "summer"
+    ]
+  },
+  {
+    "id": 20,
+    "category": "Jackets",
+    "subcategory": "Fleece Hoodie",
+    "name": "Everyday Essential Fleece Hoodie",
+    "price": 119,
+    "colorCount": 4,
+    "img": [
+      "./src/Clothes/Kid/6/1.png",
+      "./src/Clothes/Kid/6/2.png",
+      "./src/Clothes/Kid/6/3.png",
+      "./src/Clothes/Kid/6/4.png",
+      "./src/Clothes/Kid/6/5.png"
+    ],
+    "description": "Ultra-soft organic cotton fleece pullover hoodie with kangaroo pocket and ribbed cuffs.",
+    "colors": [
+      "#4A5340",
+      "#D1C2A5",
+      "#7F8C8D",
+      "#1E1E1E"
+    ],
+    "colorNames": [
+      "Olive",
+      "Beige",
+      "Grey",
+      "Black"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "gender": "KID",
+    "inStock": true,
+    "stockCount": 38,
+    "rating": 4.9,
+    "collection": "XIV 23-24",
+    "tags": [
+      "new",
+      "cotton",
+      "fleece"
+    ]
+  }
+]

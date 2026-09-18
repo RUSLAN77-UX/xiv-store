@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Saved Items & Favourites — XIV STORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='17.5' width='24.7487' height='24.7487' transform='rotate(45 17.5 0)' fill='%23D9D9D9'/%3E%3Cpath d='M34.6466 17.5002L17.75 34.3969V0.603527L34.6466 17.5002Z' fill='black' stroke='%23060606' stroke-width='0.5'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="favourites.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="site-navbar">
+        <div class="nav-left">
+            <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Collections</a>
+                <a href="products.html?filter=new" class="nav-link">New</a>
+            </nav>
+        </div>
+
+        <div class="nav-right">
+            <!-- Active Favourites Pill -->
+            <a href="favourites.html" class="nav-fav-pill" aria-label="View Favourites">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span>Wishlist</span>
+                <span class="fav-badge-count" id="navFavCount">0</span>
+            </a>
+
+            <!-- Cart Pill Navigation -->
+            <a href="checkout.html" class="nav-cart-pill" aria-label="Cart">
+                <span class="cart-pill-label">Cart</span>
+                <span class="cart-pill-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <path d="M16 10a4 4 0 0 1-8 0"/>
+                    </svg>
+                </span>
+            </a>
+
+            <!-- Profile Button -->
+            <button class="nav-circle-btn profile" id="navProfileBtn" aria-label="User profile">
+                <svg viewBox="0 0 24 24" fill="#ffffff" width="18" height="18">
+                    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21.6h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" fill="#ffffff"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div id="mobileNavOverlay" class="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Site Navigation">
+        <div class="mobile-nav-drawer" id="mobileNavDrawer">
+            <div class="mobile-nav-header">
+                <span class="mobile-nav-brand">XIV COLLECTIONS</span>
+                <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Menu">
+                    <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L17 17M17 1L1 17" stroke="#111111" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-nav-body">
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    <li><a href="products.html" class="mobile-nav-link">All Products</a></li>
+                    <li><a href="favourites.html" class="mobile-nav-link active">Wishlist</a></li>
+                    <li><a href="checkout.html" class="mobile-nav-link">Cart / Checkout</a></li>
+                    <li><a href="index.html#collectionsSection" class="mobile-nav-link">XIV Collections 23-24</a></li>
+                    <li><a href="index.html#newThisWeekSection" class="mobile-nav-link">New This Week</a></li>
+                    <li><a href="index.html#dzLookbook" class="mobile-nav-link">Lookbook</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN FAVOURITES CONTENT -->
+    <main class="favourites-container">
+        
+        <!-- Breadcrumbs -->
+        <nav class="fav-breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Favourites</span>
+        </nav>
+
+        <!-- Header -->
+        <div class="fav-header">
+            <div class="fav-title-wrap">
+                <span class="fav-badge-tag">
+                    <svg width="12" height="12" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                    Personal Wishlist
+                </span>
+                <h1 class="fav-title">SAVED ITEMS</h1>
+                <span class="fav-count-pill" id="favCountHeader">0 ITEMS</span>
+            </div>
+
+            <div class="fav-actions-bar" id="favActionsBar">
+                <button type="button" class="fav-clear-btn" id="btnClearAll">Clear Wishlist</button>
+            </div>
+        </div>
+
+        <!-- Favourites Grid -->
+        <div class="fav-grid" id="favGrid">
+            <!-- Rendered via JavaScript -->
+        </div>
+
+        <!-- Animated Empty State -->
+        <div class="fav-empty-state" id="favEmptyState" style="display: none;">
+            <div class="fav-empty-icon-wrap">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+            </div>
+            <h2 class="fav-empty-title">YOUR WISHLIST IS EMPTY</h2>
+            <p class="fav-empty-desc">
+                Save pieces while browsing the collections to compare, style, and review them anytime.
+            </p>
+            <a href="products.html" class="fav-discover-btn">
+                <span>DISCOVER COLLECTION</span>
+                <svg width="18" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M0 6H22M17 1L22 6L17 11"/>
+                </svg>
+            </a>
+        </div>
+
+    </main>
+
+    <script src="favourites-manager.js"></script>
+    <script src="profile-manager.js"></script>
+    <script src="favourites.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# Archives & Backups
+*.rar
+*.zip
+*.tar
+*.gz
+*.7z
+
+# OS metadata
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Logs & Temp
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local test artifacts
+fav_screenshot.png

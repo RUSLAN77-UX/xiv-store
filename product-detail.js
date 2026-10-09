@@ -80,6 +80,20 @@
                 heroImg.alt = item.name;
             }
 
+            // Sync Mobile Angle Badge
+            const angleBadge = document.getElementById('pdpMobileAngleBadge');
+            if (angleBadge) {
+                angleBadge.textContent = `1 / ${images.length}`;
+            }
+
+            // Sync Mobile Sticky Bar
+            const stickyThumb = document.getElementById('pdpStickyThumb');
+            const stickyTitle = document.getElementById('pdpStickyTitle');
+            const stickyPrice = document.getElementById('pdpStickyPrice');
+            if (stickyThumb && images.length > 0) stickyThumb.src = images[0];
+            if (stickyTitle) stickyTitle.textContent = item.name;
+            if (stickyPrice) stickyPrice.textContent = `$${item.price}`;
+
             const thumbsRail = document.getElementById('pdpThumbsRail');
             if (thumbsRail) {
                 thumbsRail.innerHTML = images.map((src, idx) => `
@@ -147,38 +161,60 @@
             }
         },
 
+        selectAngle(idx) {
+            const images = Array.isArray(this.item?.img) ? this.item.img : [this.item?.img];
+            if (!images || images.length === 0) return;
+            const normalizedIdx = ((idx % images.length) + images.length) % images.length;
+            const heroImg = document.getElementById('pdpHeroImage');
+            const thumbsRail = document.getElementById('pdpThumbsRail');
+            const angleBadge = document.getElementById('pdpMobileAngleBadge');
+
+            if (heroImg && images[normalizedIdx]) {
+                const wrap = document.getElementById('heroImageWrap');
+                wrap?.classList.remove('is-zoomed');
+                heroImg.style.opacity = '0.35';
+                heroImg.style.transform = 'scale(0.97)';
+                setTimeout(() => {
+                    heroImg.src = images[normalizedIdx];
+                    heroImg.style.opacity = '1';
+                    heroImg.style.transform = 'scale(1)';
+                }, 110);
+            }
+
+            if (thumbsRail) {
+                thumbsRail.querySelectorAll('.pdp-thumb-btn').forEach((b, i) => {
+                    const isActive = i === normalizedIdx;
+                    b.classList.toggle('is-active', isActive);
+                    if (isActive) {
+                        b.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    }
+                });
+            }
+
+            if (angleBadge) {
+                angleBadge.textContent = `${normalizedIdx + 1} / ${images.length}`;
+            }
+
+            this.selectedAngleIdx = normalizedIdx;
+        },
+
         bindEvents() {
             // Thumbnail selection
             const thumbsRail = document.getElementById('pdpThumbsRail');
-            const heroImg = document.getElementById('pdpHeroImage');
-
             if (thumbsRail) {
                 thumbsRail.addEventListener('click', (e) => {
                     const btn = e.target.closest('.pdp-thumb-btn');
                     if (!btn) return;
-
                     const idx = parseInt(btn.dataset.idx, 10);
-                    const images = Array.isArray(this.item?.img) ? this.item.img : [this.item?.img];
-
-                    if (heroImg && images[idx]) {
-                        const wrap = document.getElementById('heroImageWrap');
-                        wrap?.classList.remove('is-zoomed');
-                        heroImg.style.opacity = '0.4';
-                        heroImg.style.transform = 'scale(0.98)';
-                        heroImg.style.transformOrigin = 'center center';
-                        setTimeout(() => {
-                            heroImg.src = images[idx];
-                            heroImg.style.opacity = '1';
-                            heroImg.style.transform = 'scale(1)';
-                        }, 120);
-                    }
-
-                    thumbsRail.querySelectorAll('.pdp-thumb-btn').forEach((b, i) => {
-                        b.classList.toggle('is-active', i === idx);
-                    });
-                    this.selectedAngleIdx = idx;
+                    this.selectAngle(idx);
                 });
             }
+
+            // Mobile Gallery Touch Swipe
+            this.bindTouchSwipe();
+
+            // Mobile Sticky Purchase Bar
+            this.initStickyMobileBar();
 
             // Color Swatch Selection
             const colorsRow = document.getElementById('pdpColorsRow');
@@ -255,6 +291,74 @@
                     setTimeout(() => {
                         addBtn.classList.remove('is-added');
                         if (btnText) btnText.textContent = 'ADD';
+                    }, 1400);
+                });
+            }
+        },
+
+        bindTouchSwipe() {
+            const wrap = document.getElementById('heroImageWrap');
+            if (!wrap) return;
+
+            let touchStartX = 0;
+            let touchStartY = 0;
+            let touchEndX = 0;
+            let touchEndY = 0;
+
+            wrap.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+                touchEndX = touchStartX;
+                touchEndY = touchStartY;
+            }, { passive: true });
+
+            wrap.addEventListener('touchmove', (e) => {
+                touchEndX = e.touches[0].clientX;
+                touchEndY = e.touches[0].clientY;
+            }, { passive: true });
+
+            wrap.addEventListener('touchend', () => {
+                const diffX = touchStartX - touchEndX;
+                const diffY = Math.abs(touchStartY - touchEndY);
+                if (Math.abs(diffX) > 40 && diffY < Math.abs(diffX) * 0.8) {
+                    if (diffX > 0) {
+                        this.selectAngle((this.selectedAngleIdx || 0) + 1);
+                    } else {
+                        this.selectAngle((this.selectedAngleIdx || 0) - 1);
+                    }
+                }
+            }, { passive: true });
+        },
+
+        initStickyMobileBar() {
+            const stickyBar = document.getElementById('pdpMobileStickyBar');
+            const mainAddBtn = document.getElementById('pdpAddBtn');
+            if (!stickyBar || !mainAddBtn) return;
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                            stickyBar.classList.add('is-visible');
+                            stickyBar.setAttribute('aria-hidden', 'false');
+                        } else {
+                            stickyBar.classList.remove('is-visible');
+                            stickyBar.setAttribute('aria-hidden', 'true');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                observer.observe(mainAddBtn);
+            }
+
+            const stickyAddBtn = document.getElementById('pdpStickyAddBtn');
+            if (stickyAddBtn) {
+                stickyAddBtn.addEventListener('click', () => {
+                    mainAddBtn.click();
+                    stickyAddBtn.classList.add('is-added');
+                    stickyAddBtn.textContent = 'ADDED ✓';
+                    setTimeout(() => {
+                        stickyAddBtn.classList.remove('is-added');
+                        stickyAddBtn.textContent = 'ADD TO BAG';
                     }, 1400);
                 });
             }

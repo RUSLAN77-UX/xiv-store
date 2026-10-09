@@ -99,9 +99,39 @@ document.addEventListener('DOMContentLoaded', () => {
         if (orderTotal) {
             orderTotal.textContent = `$${subtotal.toFixed(2)}`;
         }
+
+        const mobileTotal = document.getElementById('orderMobileTotal');
+        if (mobileTotal) {
+            mobileTotal.textContent = `$${subtotal.toFixed(2)}`;
+        }
     }
 
     renderOrder();
+
+    // Mobile Order Summary Accordion Toggle
+    const orderHeaderToggle = document.getElementById('orderHeaderToggle');
+    const orderItemsListEl = document.getElementById('orderItemsList');
+    const orderTotalsEl = document.querySelector('.order-totals');
+    const orderDividerEl = document.querySelectorAll('.order-divider');
+
+    if (orderHeaderToggle && orderItemsListEl) {
+        orderHeaderToggle.addEventListener('click', () => {
+            if (window.innerWidth <= 860) {
+                const isExpanded = orderHeaderToggle.getAttribute('aria-expanded') !== 'false';
+                orderHeaderToggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+                orderHeaderToggle.classList.toggle('is-collapsed', isExpanded);
+                if (isExpanded) {
+                    orderItemsListEl.style.display = 'none';
+                    if (orderTotalsEl) orderTotalsEl.style.display = 'none';
+                    orderDividerEl.forEach(d => d.style.display = 'none');
+                } else {
+                    orderItemsListEl.style.display = '';
+                    if (orderTotalsEl) orderTotalsEl.style.display = '';
+                    orderDividerEl.forEach(d => d.style.display = '');
+                }
+            }
+        });
+    }
 
     // Restore any previously saved checkout info
     try {

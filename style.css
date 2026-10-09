@@ -3311,6 +3311,85 @@ nav {
     }
 }
 
+/* VIP Mobile Drawer Profile Card */
+.mobile-drawer-profile-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 15px;
+    background: linear-gradient(135deg, #18181b 0%, #09090b 100%);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    margin-bottom: 22px;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-drawer-profile-card:hover,
+.mobile-drawer-profile-card:active {
+    transform: scale(0.985);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.drawer-profile-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.drawer-profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+}
+
+.drawer-profile-name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drawer-profile-sub {
+    font-size: 11px;
+    color: #a1a1aa;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drawer-profile-arrow {
+    font-size: 16px;
+    color: #a1a1aa;
+    transition: transform 0.2s ease;
+}
+
+.mobile-drawer-profile-card:hover .drawer-profile-arrow {
+    transform: translateX(3px);
+    color: #ffffff;
+}
+
 .mobile-nav-group {
     display: flex;
     flex-direction: column;
@@ -3531,13 +3610,21 @@ nav {
 @media (max-width: 768px) {
     /* Header & Mobile Nav */
     nav {
-        padding: 14px 20px;
+        padding: 12px 18px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 
         .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
+            position: relative;
         }
 
         .links {
@@ -3546,39 +3633,89 @@ nav {
 
         .mobile-menu-btn {
             display: flex !important;
+            min-width: 42px;
+            min-height: 42px;
         }
 
         .logo {
-            margin: 0 auto;
-            transform: translateX(6px);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
         }
 
         .buttons {
+            display: flex;
+            align-items: center;
             gap: 8px;
 
             .profile {
-                display: none !important;
+                display: inline-flex !important;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                background: #1e1e1e;
+                color: #ffffff;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                padding: 0;
+                flex-shrink: 0;
+                position: relative;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
             }
 
             .favorites {
-                width: 40px;
-                height: 40px;
+                width: 38px;
+                height: 38px;
+                min-width: 38px;
             }
 
             .cart {
-                height: 40px;
+                height: 38px;
+                position: relative;
 
-                span:first-child {
-                    padding: 9px 14px;
-                    font-size: 13px;
+                .cart-btn-text {
+                    font-size: 0 !important;
+                    width: 0 !important;
+                    height: 0 !important;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    background: transparent !important;
+                    overflow: visible !important;
+                    display: block !important;
+                    transform: none !important;
                 }
 
-                span:last-child {
-                    padding: 5px;
+                .cart-nav-badge {
+                    position: absolute;
+                    top: -4px;
+                    right: -4px;
+                    margin: 0;
+                    font-size: 10px !important;
+                    padding: 1px 5px;
+                    min-width: 17px;
+                    height: 17px;
+                    border-radius: 9999px;
+                    background: #111111;
+                    color: #ffffff;
+                    border: 1.5px solid #ffffff;
+                    display: flex !important;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 700;
+                    z-index: 5;
+                }
+
+                .cart-btn-icon {
+                    padding: 0;
+                    background: transparent;
 
                     svg {
-                        width: 30px;
-                        height: 30px;
+                        width: 34px;
+                        height: 34px;
                     }
                 }
             }
@@ -3709,14 +3846,16 @@ nav {
             margin: 0;
 
             .carousel-slide {
-                gap: 0;
+                gap: 8px;
+                display: flex;
 
                 img {
-                    flex: 1 0 100%;
-                    width: 100%;
-                    max-width: 100%;
+                    flex: 1 1 calc(50% - 4px);
+                    width: calc(50% - 4px);
+                    max-width: calc(50% - 4px);
                     aspect-ratio: 1 / 1;
                     max-height: none;
+                    object-fit: cover;
                 }
             }
         }
@@ -3980,54 +4119,45 @@ nav {
 @media (max-width: 480px) {
     /* Ultra-Compact Phone Header */
     nav {
-        padding: 10px 14px;
+        padding: 8px 12px;
+        padding-top: max(8px, env(safe-area-inset-top, 0px));
 
         .logo svg {
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
         }
 
         .buttons {
-            gap: 6px;
+            gap: 5px;
 
-            .favorites {
-                width: 36px;
-                height: 36px;
+            .profile {
+                width: 34px;
+                height: 34px;
+                min-width: 34px;
 
                 svg {
-                    width: 18px;
-                    height: 18px;
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+
+            .favorites {
+                width: 34px;
+                height: 34px;
+                min-width: 34px;
+
+                svg {
+                    width: 16px;
+                    height: 16px;
                 }
             }
 
             .cart {
-                height: 36px;
+                height: 34px;
 
-                .cart-btn-text {
-                    display: none !important;
-                }
-
-                .cart-btn-icon {
-                    position: relative;
-                    background-color: transparent !important;
-                    padding: 0;
-
-                    svg {
-                        width: 36px;
-                        height: 36px;
-                    }
-                }
-
-                .cart-nav-badge {
-                    position: absolute;
-                    top: -2px;
-                    right: -2px;
-                    margin: 0;
-                    font-size: 10px;
-                    padding: 2px 5px;
-                    background: #111111;
-                    color: #ffffff;
-                    border: 1.5px solid #ffffff;
+                .cart-btn-icon svg {
+                    width: 32px;
+                    height: 32px;
                 }
             }
         }
@@ -4044,6 +4174,10 @@ nav {
 
         .search {
             padding: 8px 12px;
+
+            input[type="text"] {
+                font-size: 16px !important;
+            }
         }
     }
 

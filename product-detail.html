@@ -80,6 +80,18 @@
                 </button>
             </div>
             <div class="mobile-nav-body">
+                <!-- VIP Profile Card in Mobile Drawer -->
+                <div class="mobile-drawer-profile-card" id="mobileDrawerProfileBtn" role="button" tabindex="0" aria-label="Client Account">
+                    <div class="drawer-profile-avatar" id="drawerProfileAvatar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21.6h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                    </div>
+                    <div class="drawer-profile-info">
+                        <span class="drawer-profile-name" id="drawerProfileName">CLIENT SUITE</span>
+                        <span class="drawer-profile-sub" id="drawerProfileSub">Sign in or Join XIV</span>
+                    </div>
+                    <span class="drawer-profile-arrow">→</span>
+                </div>
+
                 <ul class="mobile-nav-links">
                     <li><a href="index.html" class="mobile-nav-link">Home</a></li>
                     <li><a href="products.html" class="mobile-nav-link">All Products</a></li>
@@ -111,6 +123,7 @@
                 <div class="pdp-main-media-box">
                     <div class="pdp-hero-image-wrap" id="heroImageWrap">
                         <img src="./src/Clothes/8/1.png" alt="Product Hero View" id="pdpHeroImage" class="pdp-hero-img" />
+                        <div class="pdp-mobile-angle-badge" id="pdpMobileAngleBadge" aria-live="polite">1 / 5</div>
                         <div class="pdp-zoom-indicator" aria-hidden="true">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="11" cy="11" r="8"></circle>
@@ -422,6 +435,18 @@
                 <button type="button" class="success-return-btn" id="successReturnBtn">Back to Catalog</button>
             </div>
         </div>
+    </div>
+
+    <!-- MOBILE STICKY BOTTOM ACTION BAR -->
+    <div class="pdp-mobile-sticky-bar" id="pdpMobileStickyBar" aria-hidden="true">
+        <div class="sticky-bar-info">
+            <img src="./src/Clothes/8/1.png" alt="Product thumbnail" class="sticky-bar-thumb" id="pdpStickyThumb">
+            <div class="sticky-bar-text">
+                <span class="sticky-bar-title" id="pdpStickyTitle">Garment</span>
+                <span class="sticky-bar-price" id="pdpStickyPrice">$99</span>
+            </div>
+        </div>
+        <button type="button" class="sticky-bar-add-btn" id="pdpStickyAddBtn">ADD TO BAG</button>
     </div>
 
     <!-- Scripts -->

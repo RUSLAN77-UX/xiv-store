@@ -338,12 +338,16 @@
          * 3. EVENT BINDINGS
          * ----------------------------------------------------------- */
         bindEvents() {
-            // Click on profile buttons in navbar
+            // Click on profile buttons in navbar or mobile drawer
             document.addEventListener('click', (e) => {
-                const profileTrigger = e.target.closest('.profile, #navProfileBtn, [aria-label="User Profile" i], [aria-label="User profile" i]');
+                const profileTrigger = e.target.closest('.profile, #navProfileBtn, #mobileDrawerProfileBtn, [data-action="profile"], [aria-label="User Profile" i], [aria-label="User profile" i]');
                 if (profileTrigger) {
                     e.preventDefault();
                     e.stopPropagation();
+                    const mobileOverlay = document.getElementById('mobileNavOverlay');
+                    if (mobileOverlay && mobileOverlay.classList.contains('is-open')) {
+                        mobileOverlay.classList.remove('is-open');
+                    }
                     this.openModal();
                 }
             });
@@ -669,6 +673,24 @@
                     btn.classList.remove('is-logged-in');
                 }
             });
+
+            // Sync Mobile Navigation Drawer Profile Card
+            const drawerName = document.getElementById('drawerProfileName');
+            const drawerSub = document.getElementById('drawerProfileSub');
+            const drawerAvatar = document.getElementById('drawerProfileAvatar');
+            if (drawerName && drawerSub) {
+                if (this.currentUser) {
+                    drawerName.textContent = this.currentUser.name;
+                    drawerSub.textContent = 'XIV PRIVILEGED MEMBER';
+                    if (drawerAvatar) drawerAvatar.textContent = this.currentUser.initials;
+                } else {
+                    drawerName.textContent = 'CLIENT SUITE';
+                    drawerSub.textContent = 'Sign in or Join XIV';
+                    if (drawerAvatar) {
+                        drawerAvatar.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21.6h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>`;
+                    }
+                }
+            }
         },
 
         updateDashboardStats() {

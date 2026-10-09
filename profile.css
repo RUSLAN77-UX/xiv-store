@@ -569,6 +569,87 @@
     border: 1.5px solid #000000;
 }
 
+/* VIP Mobile Drawer Profile Card (Universal across all pages) */
+.mobile-drawer-profile-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 15px;
+    background: linear-gradient(135deg, #18181b 0%, #09090b 100%);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    margin-bottom: 20px;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.mobile-drawer-profile-card:hover,
+.mobile-drawer-profile-card:active {
+    transform: scale(0.985);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.drawer-profile-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.drawer-profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+}
+
+.drawer-profile-name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drawer-profile-sub {
+    font-size: 11px;
+    color: #a1a1aa;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drawer-profile-arrow {
+    font-size: 16px;
+    color: #a1a1aa;
+    transition: transform 0.2s ease;
+}
+
+.mobile-drawer-profile-card:hover .drawer-profile-arrow {
+    transform: translateX(3px);
+    color: #ffffff;
+}
+
 /* 8. Mobile Responsive */
 @media (max-width: 480px) {
     .xiv-auth-overlay {
@@ -578,9 +659,23 @@
 
     .xiv-auth-modal {
         max-width: 100%;
+        width: 100%;
         border-radius: 24px 24px 0 0;
         transform: translateY(100%);
-        max-height: 90vh;
+        max-height: 92vh;
+        max-height: 92dvh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .xiv-auth-modal::before {
+        content: '';
+        display: block;
+        width: 36px;
+        height: 4px;
+        background: #d4d4d8;
+        border-radius: 2px;
+        margin: 10px auto 0;
     }
 
     .xiv-auth-overlay.is-open .xiv-auth-modal {
@@ -588,14 +683,24 @@
     }
 
     .xiv-auth-header {
-        padding: 24px 20px 16px;
+        padding: 16px 20px 14px;
     }
 
     .xiv-auth-tabs {
-        margin: 16px 20px 0;
+        margin: 12px 20px 0;
     }
 
     .xiv-auth-body {
-        padding: 20px 20px 32px;
+        padding: 18px 20px calc(28px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .xiv-auth-input {
+        font-size: 16px !important;
+        height: 48px;
+    }
+
+    .xiv-auth-submit-btn {
+        height: 48px;
+        font-size: 13px;
     }
 }

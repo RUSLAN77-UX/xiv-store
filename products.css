@@ -1166,6 +1166,17 @@
 @media (max-width: 900px) {
     .mobile-filter-bar {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 60px;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid #eeeeee;
+        padding: 10px 16px;
+        margin: 0 -16px 16px -16px;
     }
 
     .catalog-layout {
@@ -1178,11 +1189,15 @@
         top: 0;
         left: -320px;
         width: 300px;
+        max-width: 86vw;
         height: 100vh;
+        height: 100dvh;
         background: #ffffff;
         z-index: 1000;
         padding: 24px;
+        padding-bottom: max(28px, env(safe-area-inset-bottom, 0px));
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
         transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -1211,15 +1226,19 @@
 
 @media (max-width: 600px) {
     .products-page {
-        padding: 16px 0 60px;
+        padding: 14px 0 60px;
     }
 
     .catalog-container {
-        padding: 0 16px;
+        padding: 0 12px;
     }
 
     .catalog-page-title {
-        font-size: 26px;
+        font-size: 24px;
+    }
+
+    .ajax-search-box input {
+        font-size: 16px !important; /* Prevents iOS auto-zoom */
     }
 
     .pills-row {
@@ -1228,17 +1247,22 @@
         padding-bottom: 6px;
         width: 100%;
         -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .pills-row::-webkit-scrollbar {
+        display: none;
     }
 
     .filter-pill {
         flex-shrink: 0;
         padding: 6px 12px;
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px 12px;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px 8px;
     }
 
     .card-meta-row {
@@ -1248,11 +1272,12 @@
     }
 
     .card-title {
-        font-size: 12px;
+        font-size: 11.5px;
+        line-height: 1.25;
     }
 
     .card-price {
-        font-size: 13px;
+        font-size: 12.5px;
     }
 
     .ajax-search-dropdown {
@@ -1260,9 +1285,9 @@
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 320px) {
     .products-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
 }
 

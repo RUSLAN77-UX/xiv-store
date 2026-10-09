@@ -777,21 +777,99 @@ body {
         display: none !important;
     }
     .favourites-container {
-        padding: 16px 24px 60px;
+        padding: 16px 20px 60px;
     }
     .site-navbar {
-        padding: 20px 24px 14px;
+        padding: 14px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
     .fav-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px 14px;
+        gap: 16px 12px;
     }
     .fav-title {
-        font-size: 28px;
+        font-size: 26px;
     }
 }
 
 @media (max-width: 480px) {
+    .site-navbar {
+        padding: 10px 14px;
+        padding-top: max(10px, env(safe-area-inset-top, 0px));
+    }
+    .favourites-container {
+        padding: 12px 12px 60px;
+    }
+    .fav-title {
+        font-size: 22px;
+    }
+    .fav-title-wrap {
+        gap: 6px;
+    }
+    .nav-right {
+        gap: 6px;
+    }
+    .nav-fav-pill {
+        height: 36px;
+        padding: 0 8px;
+        gap: 5px;
+    }
+    .nav-fav-pill > span:first-of-type {
+        display: none;
+    }
+    .nav-cart-pill {
+        height: 36px;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+    .nav-cart-pill:hover {
+        box-shadow: none;
+    }
+    .cart-pill-label {
+        display: none;
+    }
+    .cart-pill-circle {
+        width: 34px;
+        height: 34px;
+        background: #000000;
+        color: #ffffff;
+    }
+    .cart-pill-circle svg {
+        stroke: #ffffff;
+    }
+    .nav-circle-btn {
+        width: 36px;
+        height: 36px;
+    }
+    .fav-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px 8px;
+    }
+    .fav-card-media {
+        aspect-ratio: 1 / 1;
+    }
+    .fav-card-title {
+        font-size: 12px;
+        line-height: 1.25;
+    }
+    .fav-card-price {
+        font-size: 12.5px;
+    }
+    .fav-btn-add {
+        height: 38px;
+        font-size: 11px;
+        letter-spacing: 0.6px;
+    }
+}
+
+@media (max-width: 330px) {
     .fav-grid {
         grid-template-columns: 1fr;
     }

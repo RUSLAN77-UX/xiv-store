@@ -102,9 +102,15 @@
 
             <!-- RIGHT COLUMN: YOUR ORDER -->
             <aside class="order-summary-card" aria-label="Order Summary">
-                <div class="order-header">
-                    <h2 class="order-title">YOUR ORDER</h2>
-                    <span class="order-badge" id="orderCountBadge">(2)</span>
+                <div class="order-header" id="orderHeaderToggle" role="button" tabindex="0" aria-expanded="true">
+                    <div class="order-header-left">
+                        <h2 class="order-title">YOUR ORDER</h2>
+                        <span class="order-badge" id="orderCountBadge">(2)</span>
+                    </div>
+                    <div class="order-header-right">
+                        <span class="order-mobile-total" id="orderMobileTotal">$180.00</span>
+                        <svg class="order-toggle-chevron" width="12" height="7" viewBox="0 0 12 7" fill="none"><path d="M1 1L6 6L11 1" stroke="#111111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
                 </div>
 
                 <!-- Products list in order -->
